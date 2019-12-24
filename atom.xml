@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-23T12:09:01.310Z</updated>
+  <updated>2019-12-24T13:52:42.199Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/12/23/Java%E5%AE%9E%E9%AA%8C%E5%9B%9B/"/>
     <id>http://yoursite.com/2019/12/23/Java%E5%AE%9E%E9%AA%8C%E5%9B%9B/</id>
     <published>2019-12-23T11:55:43.468Z</published>
-    <updated>2019-12-23T12:09:01.310Z</updated>
+    <updated>2019-12-24T13:52:42.199Z</updated>
     
     <summary type="html">
     
@@ -31,6 +31,8 @@
     
     
     
+      <category term="Java课程实验" scheme="http://yoursite.com/tags/Java%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/"/>
+    
   </entry>
   
   <entry>
@@ -38,7 +40,7 @@
     <link href="http://yoursite.com/2019/12/23/Java%E5%AE%9E%E9%AA%8C%E4%B8%89/"/>
     <id>http://yoursite.com/2019/12/23/Java%E5%AE%9E%E9%AA%8C%E4%B8%89/</id>
     <published>2019-12-23T11:43:06.068Z</published>
-    <updated>2019-12-23T11:54:38.159Z</updated>
+    <updated>2019-12-24T13:52:35.548Z</updated>
     
     <summary type="html">
     
@@ -48,6 +50,8 @@
     
     
     
+      <category term="Java课程实验" scheme="http://yoursite.com/tags/Java%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/"/>
+    
   </entry>
   
   <entry>
@@ -55,7 +59,7 @@
     <link href="http://yoursite.com/2019/12/23/Java%E5%AE%9E%E9%AA%8C%E4%BA%8C/"/>
     <id>http://yoursite.com/2019/12/23/Java%E5%AE%9E%E9%AA%8C%E4%BA%8C/</id>
     <published>2019-12-23T11:07:49.773Z</published>
-    <updated>2019-12-23T11:36:44.945Z</updated>
+    <updated>2019-12-24T13:52:21.827Z</updated>
     
     <summary type="html">
     
@@ -64,6 +68,8 @@
     </summary>
     
     
+    
+      <category term="Java课程实验" scheme="http://yoursite.com/tags/Java%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/"/>
     
   </entry>
   
