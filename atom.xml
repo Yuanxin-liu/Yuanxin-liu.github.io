@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-04T10:54:28.944Z</updated>
+  <updated>2020-03-08T15:28:04.161Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PB--学生选课系统</title>
+    <link href="http://yoursite.com/2020/03/08/PB--%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://yoursite.com/2020/03/08/PB--%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/</id>
+    <published>2020-03-08T14:52:24.174Z</published>
+    <updated>2020-03-08T15:28:04.161Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《数据库原理》验收项目代码。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="数据库原理" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Java实验六</title>

@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>PB--学生选课系统</title>
+    <url>/2020/03/08/PB--%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>《数据库原理》验收项目代码。</p>
+<a id="more"></a>
+
+<h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>PowerBuilder 9.0<br>不做评价，学校要求使用的，<a href="https://pan.baidu.com/s/1qgZFbcLK2rjX370anD3NPw" target="_blank" rel="noopener">下载地址</a>，提取码：fezg</p>
+<h3 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h3><h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><p> <strong>1.创建数据库</strong><br> 创建表和字段<br> <strong>2.建立工作空间和应用对象</strong></p>
+<p> <strong>3.建立数据窗口</strong></p>
+<p> <strong>4.建立窗口</strong><br> <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure><br> <strong>5.添加菜单</strong><br> <strong>6.生成可执行文件</strong></p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3>]]></content>
+      <tags>
+        <tag>数据库原理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java实验六</title>
     <url>/2020/01/04/Java%E5%AE%9E%E9%AA%8C%E5%85%AD/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>《Java程序设计》课程第六周实验题目和代码。</p>
