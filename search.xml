@@ -29,7 +29,21 @@
 
 <h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>PowerBuilder 9.0<br>不做评价，学校要求使用的，<a href="https://pan.baidu.com/s/1qgZFbcLK2rjX370anD3NPw" target="_blank" rel="noopener">下载地址</a>，提取码：fezg</p>
 <h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h4><h5 id="I-创建ASA数据库，教程"><a href="#I-创建ASA数据库，教程" class="headerlink" title="I. 创建ASA数据库，教程"></a>I. 创建ASA数据库，<a href="https://blog.csdn.net/wjf1997/article/details/92437985" target="_blank" rel="noopener">教程</a></h5><p>其中”User ID”值为”dba”,”Password”值为”sql”,”Database Name”值为”student”,</p>
-<h5 id="II-创建表和数据操作"><a href="#II-创建表和数据操作" class="headerlink" title="II. 创建表和数据操作"></a>II. 创建表和数据操作</h5><p>分别创建三张表学生表S,课程表C，和学习表SC。这三个表的字段、主键和外键定义如下：<br><strong>学生表： S（sno,sname,sex,age,sdept,logn,pswd)<br>主键： sno</strong><br>| 第一列       | 第二列         | 第三列        |<br>|:———–:| ————-:|:————-|<br>| 第一列文本居中 | 第二列文本居右  | 第三列文本居左 |</p>
+<h5 id="II-创建表和数据操作"><a href="#II-创建表和数据操作" class="headerlink" title="II. 创建表和数据操作"></a>II. 创建表和数据操作</h5><p>分别创建三张表学生表S,课程表C，和学习表SC。这三个表的字段、主键和外键定义如下：<br><strong>学生表： S（sno,sname,sex,age,sdept,logn,pswd)<br>主键： sno</strong>    </p>
+<table>
+<thead>
+<tr>
+<th align="center">第一列</th>
+<th align="right">第二列</th>
+<th align="left">第三列</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">第一列文本居中</td>
+<td align="right">第二列文本居右</td>
+<td align="left">第三列文本居左</td>
+</tr>
+</tbody></table>
 <table>
 <thead>
 <tr>
