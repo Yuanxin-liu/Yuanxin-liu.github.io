@@ -16,7 +16,7 @@ const ap = new APlayer({
       {
         name: '画',
         artist: 'G.E.M.邓紫棋',
-        url: 'http://music.163.com/#/song?id=412911436',
+        url: 'http://m10.music.126.net/20200310203500/01ac71fa281cefaa4a6441761303dd09/ymusic/225a/0b65/aa03/90387f0b1f4558c67fe72c77f39e5b62.mp3',
         
       }
 
