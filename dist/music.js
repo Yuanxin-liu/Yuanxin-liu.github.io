@@ -8,33 +8,33 @@ const ap = new APlayer({
 
     audio: [
       {
-        name: "可惜我是水瓶座",
+        name: "野孩子",
         artist: '杨千嬅',
-        url: 'http://m10.music.126.net/20191225135224/199144acac1df47da9a6454daefca7d5/ymusic/0376/4fc2/e837/e9fd4802a575aadbad8b084f1a75269e.mp3',
+        url: 'http://m10.music.126.net/20200310191001/3e7889423162dc05d88323000f222a67/ymusic/023f/4148/8ce5/29ff2cbc5f95f79f3d9ce6a504ce76e1.mp3',
       
       },
       {
         name: '小半',
         artist: '陈粒',
-        url: 'http://m10.music.126.net/20191225140353/358455b1423e22221ec759009f312223/ymusic/2d15/d9fd/57cd/6679396a63ff496ecef0453b25612dfa.mp3',
+        url: 'http://m10.music.126.net/20200310192313/e7f138d7d5f10d6870b958a344455767/ymusic/2d15/d9fd/57cd/6679396a63ff496ecef0453b25612dfa.mp3',
         
       },
       {
-        name: '你瞒我瞒',
-        artist: '陈柏宇',
-        url: 'http://m10.music.126.net/20191225140452/167eb99a3c8d5a627a836c8f3c4554b4/ymusic/6eef/325e/25f9/db1be99210b06ed4154a5759d858ea30.mp3',
+        name: '画',
+        artist: 'G.E.M.邓紫棋',
+        url: 'http://m10.music.126.net/20200310190802/3d1ff26035ac14558221a3e890791405/ymusic/225a/0b65/aa03/90387f0b1f4558c67fe72c77f39e5b62.mp3',
         
       },
       {
-        name: '处处吻',
-        artist: '杨千嬅',
-        url: 'http://m10.music.126.net/20191225140651/6d5fcacee0b6259828d6cbd32f1e5902/ymusic/4376/f20d/ab79/c584c6dc03cda24064a51363e5e6e0d8.mp3',
+        name: '处处吻（Cover：于梓贝）',
+        artist: '邓壬鑫',
+        url: 'http://m10.music.126.net/20200310191258/291a61fa3a36d7c6e9d7b35b9915f229/ymusic/0f59/0f5a/510c/83f5b655b080b9530169ff1dec2e2624.mp3',
         
       },
       {
-        name: '虚拟',
-        artist: '陈粒',
-        url: 'http://m10.music.126.net/20191225140746/d139978ca0bca5b7b704593ef08f8ff6/ymusic/db30/6d6f/3dc4/1b2826f685d65de427468badbbfa9390.mp3',
+        name: '烟霞',
+        artist: '容祖儿',
+        url: 'http://dl.stream.qqmusic.qq.com/C100002BdYFT0uEEWt.m4a?fromtag=38',
         
       }
 
