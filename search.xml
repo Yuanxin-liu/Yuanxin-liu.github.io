@@ -30,20 +30,10 @@
 <h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>PowerBuilder 9.0<br>不做评价，学校要求使用的，<a href="https://pan.baidu.com/s/1qgZFbcLK2rjX370anD3NPw" target="_blank" rel="noopener">下载地址</a>，提取码：fezg</p>
 <h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h4><h5 id="I-创建ASA数据库，教程"><a href="#I-创建ASA数据库，教程" class="headerlink" title="I. 创建ASA数据库，教程"></a>I. 创建ASA数据库，<a href="https://blog.csdn.net/wjf1997/article/details/92437985" target="_blank" rel="noopener">教程</a></h5><p>其中”User ID”值为”dba”,”Password”值为”sql”,”Database Name”值为”student”,</p>
 <h5 id="II-创建表和数据操作"><a href="#II-创建表和数据操作" class="headerlink" title="II. 创建表和数据操作"></a>II. 创建表和数据操作</h5><p>分别创建三张表学生表S,课程表C，和学习表SC。这三个表的字段、主键和外键定义如下：<br><strong>学生表： S（sno,sname,sex,age,sdept,logn,pswd)<br>主键： sno</strong>    </p>
-<table>
-<thead>
-<tr>
-<th align="center">第一列</th>
-<th align="right">第二列</th>
-<th align="left">第三列</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">第一列文本居中</td>
-<td align="right">第二列文本居右</td>
-<td align="left">第三列文本居左</td>
-</tr>
-</tbody></table>
+<!-- | 第一列       | 第二列         | 第三列        |
+|:-----------:| -------------:|:-------------|
+| 第一列文本居中 | 第二列文本居右  | 第三列文本居左 |  -->
+
 <table>
 <thead>
 <tr>
@@ -87,132 +77,69 @@
 <td>char(20)</td>
 <td>登录密码</td>
 </tr>
+</tbody></table>
+<p>数据操作结果如下：<br><img src="" alt="S表字段"><br><strong>课程表： C（cno,cname,credit,cdept,tname)<br>主键： cno</strong>    </p>
+<table>
+<thead>
 <tr>
-<td>数据操作结果如下：</td>
-<td></td>
-<td></td>
+<th>Column Name</th>
+<th align="center">Data Type</th>
+<th align="right">Meaning</th>
 </tr>
-<tr>
-<td><img src="" alt="S表字段"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>**课程表： C（cno,cname,credit,cdept,tname)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>主键： cno**</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Column Name</td>
-<td>Data Type</td>
-<td>Meaning</td>
-</tr>
-<tr>
-<td>-</td>
-<td>:-:</td>
-<td>-:</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>cno</td>
-<td>char(4)</td>
-<td>课程号</td>
+<td align="center">char(4)</td>
+<td align="right">课程号</td>
 </tr>
 <tr>
 <td>cname</td>
-<td>char(8)</td>
-<td>课程名</td>
+<td align="center">char(8)</td>
+<td align="right">课程名</td>
 </tr>
 <tr>
 <td>credit</td>
-<td>integer</td>
-<td>学分</td>
+<td align="center">integer</td>
+<td align="right">学分</td>
 </tr>
 <tr>
 <td>cdept</td>
-<td>char(10)</td>
-<td>院系</td>
+<td align="center">char(10)</td>
+<td align="right">院系</td>
 </tr>
 <tr>
 <td>tname</td>
-<td>char(8)</td>
-<td>教师名</td>
+<td align="center">char(8)</td>
+<td align="right">教师名</td>
 </tr>
+</tbody></table>
+<p>结果如下：<br><img src="" alt="C表字段"><br><strong>学习表： SC（sno,cno,grade)<br>主键： （sno,cno）<br>外键： sno,cno</strong>  </p>
+<table>
+<thead>
 <tr>
-<td>结果如下：</td>
-<td></td>
-<td></td>
+<th>Column Name</th>
+<th align="center">Data Type</th>
+<th align="right">Meaning</th>
 </tr>
-<tr>
-<td><img src="" alt="C表字段"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>**学习表： SC（sno,cno,grade)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>主键： （sno,cno）</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>外键： sno,cno**</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Column Name</td>
-<td>Data Type</td>
-<td>Meaning</td>
-</tr>
-<tr>
-<td>-</td>
-<td>:-:</td>
-<td>-:</td>
-</tr>
-<tr>
+</thead>
+<tbody><tr>
 <td>sno</td>
-<td>char(4)</td>
-<td>学号</td>
+<td align="center">char(4)</td>
+<td align="right">学号</td>
 </tr>
 <tr>
 <td>cno</td>
-<td>char(4)</td>
-<td>课程号</td>
+<td align="center">char(4)</td>
+<td align="right">课程号</td>
 </tr>
 <tr>
 <td>grade</td>
-<td>integer</td>
-<td>成绩</td>
-</tr>
-<tr>
-<td>注意！grade设置为可以赋空值，否则之后插入数据会报错。结果如下：</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><img src="" alt="SC表字段"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>#### 2.建立工作空间和应用对象</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>参见《数据库使用教程》P321-322或者<a href="https://jingyan.baidu.com/article/a17d52852766968098c8f23f.html" target="_blank" rel="noopener">应用对象创建</a></td>
-<td></td>
-<td></td>
+<td align="center">integer</td>
+<td align="right">成绩</td>
 </tr>
 </tbody></table>
+<p>注意！grade设置为可以赋空值，否则之后插入数据会报错。结果如下：<br><img src="" alt="SC表字段">  </p>
+<h4 id="2-建立工作空间和应用对象"><a href="#2-建立工作空间和应用对象" class="headerlink" title="2.建立工作空间和应用对象"></a>2.建立工作空间和应用对象</h4><p>参见《数据库使用教程》P321-322或者<a href="https://jingyan.baidu.com/article/a17d52852766968098c8f23f.html" target="_blank" rel="noopener">应用对象创建</a></p>
 <h4 id="3-建立数据窗口"><a href="#3-建立数据窗口" class="headerlink" title="3.建立数据窗口"></a>3.建立数据窗口</h4><p>参见<a href="https://jingyan.baidu.com/article/8275fc8677342446a03cf6c2.html" target="_blank" rel="noopener">建立数据窗口教程</a>分别建立数据窗口(d_c, d_s), 带参数数据窗口（d_select_student_course,d_select_student, d_select_student_score, d_score_input），group格式数据窗口（d_student_score_report， d_score_dis）<br>设置如下：<br><strong>d_c</strong><br>格式： Grid<br>选择方式： Quick Select<br>表： C<br>字段： All<br>可以将cdept的edit属性设置如下，按自己喜好设置。<br><img src="" alt="d_c"> </p>
 <p><strong>d_s</strong><br>格式： Grid<br>选择方式： Quick Select<br>表： S<br>字段： All<br>可以将sex的edit属性设置如下，按自己喜好设置。<br> <img src="" alt="d_s">  </p>
 <p><strong>d_select_student_course</strong><br>格式： Grid<br>选择方式： Sql Select<br>表： C,SC<br>字段： cno,cname,credit,cdept,tname<br>定义获取参数： snum(Name),String(Type)<br>where字句： sc.cno=:snum<br>经过增强数据窗口功能处理以后，结果如图所示：<br>  <img src="" alt="d_select_student_course">  </p>
