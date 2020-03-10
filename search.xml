@@ -136,7 +136,7 @@
 <td align="right">成绩</td>
 </tr>
 </tbody></table>
-<p>注意！grade设置为可以赋空值，否则之后插入数据会报错。结果如下：<br><img src="http://q6za31v11.bkt.clouddn.com/w_teacher_manage.png" alt="SC表字段"> </p>
+<p>注意！grade设置为可以赋空值，否则之后插入数据会报错。结果如下：<br><img src="http://q6za31v11.bkt.clouddn.com/SC.png" alt="SC表字段"> </p>
 <h4 id="2-建立工作空间和应用对象"><a href="#2-建立工作空间和应用对象" class="headerlink" title="2.建立工作空间和应用对象"></a>2.建立工作空间和应用对象</h4><p>参见《数据库使用教程》P321-322或者<a href="https://jingyan.baidu.com/article/a17d52852766968098c8f23f.html" target="_blank" rel="noopener">应用对象创建</a></p>
 <h4 id="3-建立数据窗口"><a href="#3-建立数据窗口" class="headerlink" title="3.建立数据窗口"></a>3.建立数据窗口</h4><p>参见<a href="https://jingyan.baidu.com/article/8275fc8677342446a03cf6c2.html" target="_blank" rel="noopener">建立数据窗口教程</a>分别建立数据窗口(d_c, d_s), 带参数数据窗口（d_select_student_course,d_select_student, d_select_student_score, d_score_input），group格式数据窗口（d_student_score_report， d_score_dis）<br>设置如下：<br><strong>d_c</strong><br>格式： Grid<br>选择方式： Quick Select<br>表： C<br>字段： All<br>可以将cdept的edit属性设置如下，按自己喜好设置。<br><img src="http://q6za31v11.bkt.clouddn.com/d_c.png" alt="d_c"> </p>
 <p><strong>d_s</strong><br>格式： Grid<br>选择方式： Quick Select<br>表： S<br>字段： All<br>可以将sex的edit属性设置如下，按自己喜好设置。<br> <img src="http://q6za31v11.bkt.clouddn.com/d_s.png" alt="d_s">  </p>
