@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-10T10:14:32.151Z</updated>
+  <updated>2020-03-12T14:41:04.091Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java实验八</title>
+    <link href="http://yoursite.com/2020/03/12/Java%E5%AE%9E%E9%AA%8C%E5%85%AB/"/>
+    <id>http://yoursite.com/2020/03/12/Java%E5%AE%9E%E9%AA%8C%E5%85%AB/</id>
+    <published>2020-03-12T14:32:21.843Z</published>
+    <updated>2020-03-12T14:41:04.091Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《Java程序设计》课程第八周实验题目和代码。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="Java课程实验" scheme="http://yoursite.com/tags/Java%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>Java实验七</title>
