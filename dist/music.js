@@ -26,9 +26,9 @@ const ap = new APlayer({
         
       },
       {
-        name: '画',
-        artist: 'G.E.M.邓紫棋',
-        url: 'http://m10.music.126.net/20200310203918/31506461a2903b4165bed810d3f8a154/ymusic/225a/0b65/aa03/90387f0b1f4558c67fe72c77f39e5b62.mp3',
+        name: '烟霞',
+        artist: '容祖儿',
+        url: 'https://music.apple.com/cn/album/%E7%83%9F%E9%9C%9E/1211640810?i=1211641243',
         
       }
 
