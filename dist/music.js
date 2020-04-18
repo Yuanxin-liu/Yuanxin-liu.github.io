@@ -14,15 +14,27 @@ const ap = new APlayer({
       
       },
       {
+        name: "搬进我心里",
+        artist: 'NINEONE',
+        url: 'http://m8.music.126.net/20200418134810/c4fcc7962868d3583758b91e37c6e7bd/ymusic/3a71/760e/f892/25bd3b7eac766d6dc894ab5394d1c94b.mp3',
+      
+      },
+      {
         name: '虚拟',
         artist: '陈粒',
         url: 'http://m8.music.126.net/20200418133942/21ebbd05f53a67fdb235a7807ffeaa83/ymusic/db30/6d6f/3dc4/1b2826f685d65de427468badbbfa9390.mp3',
         
       },
       {
+        name: '奇妙能力歌',
+        artist: '陈粒',
+        url: 'http://m8.music.126.net/20200418140916/551bb7444998662ce1d4d0e1d52687f0/ymusic/63e6/c919/3a38/0921acd6c5db882c7157c442235de51e.mp3',
+        
+      },
+      {
         name: '处处吻（Cover：于梓贝）',
         artist: '邓壬鑫',
-        url: 'http://m8.music.126.net/20200418133553/2bebd55cdfe27fb80490bec4203ec037/ymusic/0f59/0f5a/510c/83f5b655b080b9530169ff1dec2e2624.mp3',
+        url: 'http://m8.music.126.net/20200418140453/a28fcd29bb404adea4c54c6044fda699/ymusic/0f59/0f5a/510c/83f5b655b080b9530169ff1dec2e2624.mp3',
         
       },
       {
