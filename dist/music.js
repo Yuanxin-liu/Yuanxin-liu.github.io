@@ -80,6 +80,27 @@ const ap = new APlayer({
         artist: '邓紫棋',
         url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E7%94%BB.mp3',
         cover: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E7%94%BB.jpg',
+      },
+      {
+        name: '处处吻（Cover：于梓贝）',
+        artist: '邓壬鑫',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E5%A4%84%E5%A4%84%E5%90%BB.mp3',
+        cover: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E5%A4%84%E5%A4%84%E5%90%BB.jpg',
+
+      },
+      {
+        name: '虚拟',
+        artist: '陈粒',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E8%99%9A%E6%8B%9F.mp3',
+        cover: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E8%99%9A%E6%8B%9F.jpg',
+
+      },
+      {
+        name: '野孩子',
+        artist: '杨千嬅',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E9%87%8E%E5%AD%A9%E5%AD%90.mp3',
+        cover: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E9%87%8E%E5%AD%A9%E5%AD%90.jpeg',
+
       }
     ]
 });
