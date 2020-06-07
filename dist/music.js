@@ -10,23 +10,43 @@ const ap = new APlayer({
       {
         name: "I don't wanna see u anymore",
         artist: 'NINEONE',
-        url: 'http://m8.music.126.net/20200418134246/3a88d160a6fe8a9b6671cc2c0befea11/ymusic/b5b5/9b5d/7ad7/fb41cc3731e57e6cdd5461c56085b3ba.mp3',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/i%20dont%20wanna%20see%20u%20anymore.mp3',
       
       },
       {
         name: '虚拟',
         artist: '陈粒',
-        url: 'http://m8.music.126.net/20200418133942/21ebbd05f53a67fdb235a7807ffeaa83/ymusic/db30/6d6f/3dc4/1b2826f685d65de427468badbbfa9390.mp3',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E8%99%9A%E6%8B%9F.mp3',
         
       },
 
       {
         name: '处处吻（Cover：于梓贝）',
         artist: '邓壬鑫',
-        url: 'http://m8.music.126.net/20200418140453/a28fcd29bb404adea4c54c6044fda699/ymusic/0f59/0f5a/510c/83f5b655b080b9530169ff1dec2e2624.mp3',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E5%A4%84%E5%A4%84%E5%90%BB.mp3',
+        
+      },
+
+      {
+        name: '情人',
+        artist: '蔡徐坤',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E6%83%85%E4%BA%BA.mp3',
+        
+      },
+
+      {
+        name: '画',
+        artist: '邓紫棋',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E7%94%BB.mp3',
+        
+      }，
+
+      {
+        name: '野孩子',
+        artist: '杨千嬅',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E9%87%8E%E5%AD%A9%E5%AD%90.mp3',
         
       }
-
 
     ]
 });
