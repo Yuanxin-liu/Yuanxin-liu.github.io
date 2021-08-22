@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="思考,代码,博客" />
+   
+  <meta name="description" content="record some ideas" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Java实验四 |  Aoxue-blog
+  </title>
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+</html>
+<body>
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-Java实验四" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java实验四
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E5%9B%9B/" class="article-date">
+  <time datetime="2019-12-30T02:06:14.000Z" itemprop="datePublished">2019-12-30</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>《Java程序设计》课程第四周实验题目和代码。</p>
+<span id="more"></span>
+
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>编写一个类 computePower，类中提供两个重载的静态函数，分别实现了两个<br>参数各自的平方运算，并能够输出平方后的计算结果。<br>要求 I（第 1 个重载的静态函数，基本数据类型值传递方式）：<br>（1）新建一个测试类 computePowerTest，在主函数中准备两个 double 型参数<br>的值；<br>（2）调用第一个静态方法 compPower，采用基本数据类型值传递的方式，<br>计算传入的两个参数平方，并分别在静态方法和主函数中输出两个参数的值；<br>要求 II（第 2 个重载的静态函数，引用型数据类型值传递方式）：<br>（1）定义一个类 Parameter，拥有两个成员变量 a 和 b，存储两个 double 型变<br>量；<br>（2）在主函数中创建一个 Parameter 类对象，并调用第二个静态方法，以引<br>用数据类型值传递的方式，计算传入的 Parameter 对象中两个参数的平方，并把<br>平方和计算结果放入 Parameter 类所创建的对象的第 1 个成员变量 a 中。最后，<br>分别在静态方法和主函数中输出传递参数和引用参数中对象的两个变量参数值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编写一个类 computePower，类中提供两个重载的静态函数，分别实现了两个</span></span><br><span class="line"><span class="comment">//参数各自的平方运算，并能够输出平方后的计算结果。 </span></span><br><span class="line"><span class="comment">//要求 I（第 1 个重载的静态函数，基本数据类型值传递方式）： </span></span><br><span class="line"><span class="comment">//（1）新建一个测试类 computePowerTest，在主函数中准备两个 double 型参数</span></span><br><span class="line"><span class="comment">//的值；（2）调用第一个静态方法 compPower，采用基本数据类型值传递的方式，</span></span><br><span class="line"><span class="comment">//计算传入的两个参数平方，并分别在静态方法和主函数中输出两个参数的值； </span></span><br><span class="line"><span class="comment">//要求 II（第 2 个重载的静态函数，引用型数据类型值传递方式）： </span></span><br><span class="line"><span class="comment">//（1）定义一个类 Parameter，拥有两个成员变量 a 和 b，存储两个 double 型变</span></span><br><span class="line"><span class="comment">//量；（2）在主函数中创建一个 Parameter 类对象，并调用第二个静态方法，以引</span></span><br><span class="line"><span class="comment">//用数据类型值传递的方式，计算传入的 Parameter 对象中两个参数的平方，并把</span></span><br><span class="line"><span class="comment">//平方和计算结果放入 Parameter 类所创建的对象的第 1 个成员变量 a 中。最后，</span></span><br><span class="line"><span class="comment">//分别在静态方法和主函数中输出传递参数和引用参数中对象的两个变量参数值。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Parameter类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parameter</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> a ,b;    <span class="comment">//私有成员变量a,b</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//修改a的值</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setA</span><span class="params">(<span class="keyword">double</span> a )</span></span>&#123; </span><br><span class="line">		<span class="keyword">this</span>.a=a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//修改b的值</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setB</span><span class="params">(<span class="keyword">double</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.b=b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//获取a的值</span></span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">getA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//获取b的值</span></span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">getB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//computePower类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">computePower</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//计算a的平方，b的平方</span></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">compPower</span><span class="params">(<span class="keyword">double</span> a1,<span class="keyword">double</span> b1)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;in static function,two perimeters are: &quot;</span>+a1+<span class="string">&quot;,&quot;</span>+b1);</span><br><span class="line">		System.out.println(<span class="string">&quot;in static function,result is : &quot;</span>+a1*a1+<span class="string">&quot;,&quot;</span>+b1*b1);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//计算对象a的两个成员变量的平方</span></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">compPower</span><span class="params">(Parameter a)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;in static function,two perimeters are: &quot;</span>+a.getA()+<span class="string">&quot;,&quot;</span>+a.getB());</span><br><span class="line">		<span class="keyword">double</span> m,n;</span><br><span class="line">		m=a.getA();</span><br><span class="line">		n=a.getB();</span><br><span class="line">		System.out.println(<span class="string">&quot;in static function,result is : &quot;</span>+m*m+<span class="string">&quot;,&quot;</span>+n*n);</span><br><span class="line">		a.setA(m*m+n*n);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">computePowerTest</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">double</span> a=<span class="number">3.5</span>,b=<span class="number">7.2</span>;</span><br><span class="line">		System.out.println(<span class="string">&quot;in main function,two perimeters are: &quot;</span>+a+<span class="string">&quot;,&quot;</span>+b);</span><br><span class="line">		</span><br><span class="line">		computePower c=<span class="keyword">new</span> computePower(); <span class="comment">//创建computePower类c</span></span><br><span class="line">		c.compPower(a, b);                 <span class="comment">//计算a的平方，b的平方</span></span><br><span class="line">		Parameter p=<span class="keyword">new</span> Parameter();       <span class="comment">//创建Parameter类p</span></span><br><span class="line">		p.setA(<span class="number">6.5</span>);                    <span class="comment">//设置P的成员变量a的值</span></span><br><span class="line">		p.setB(<span class="number">8.8</span>);                    <span class="comment">//设置P的成员变量b的值</span></span><br><span class="line">		c.compPower(p);                 <span class="comment">//计算对象p的成员变量的平方</span></span><br><span class="line">		<span class="keyword">double</span> m,n;</span><br><span class="line">		m=p.getA();                   <span class="comment">//获取对象p的成员变量a的值</span></span><br><span class="line">		n=p.getB();                   <span class="comment">//获取对象p的成员变量b的值</span></span><br><span class="line">		System.out.println(<span class="string">&quot;in main function,after computing,p&#x27;s two perimeters are: &quot;</span>+m+<span class="string">&quot;,&quot;</span>+n);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p> 编写一个类，定义两个成员变量 x 和 y，其中 x 为类变量（double 型），y<br>为实例变量（int 型），并分别实现变量 x 和 y 的设置与获取方法。<br>（1）请分别在类中定义设置和获取 x 与 y 的类方法和实例方法；<br>（2）创建一个新类，在主函数中构建第一个类的 2 个对象，通过第一个类中设<br>置方法，分别为 2 个对象的 x 和 y 赋值，并显示 2 个对象的 x 和 y 值。<br>要求：静态变量的设置与获取对应用静态方法实现。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2，定义两个成员变量 x 和 y，其中 x 为类变量（double 型），y</span></span><br><span class="line"><span class="comment">//为实例变量（int 型），并分别实现变量 x 和 y 的设置与获取方法。</span></span><br><span class="line"><span class="comment">//（1）请分别在类中定义设置和获取 x 与 y 的类方法和实例方法；</span></span><br><span class="line"><span class="comment">//（2）创建一个新类，在主函数中构建第一个类的 2 个对象，通过第一个类中设</span></span><br><span class="line"><span class="comment">//置方法，分别为 2 个对象的 x 和 y 赋值，并显示 2 个对象的 x 和 y 值。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">double</span> x;</span><br><span class="line">	<span class="keyword">int</span> y;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setX</span><span class="params">(<span class="keyword">double</span> a)</span> </span>&#123;</span><br><span class="line">		x=a;</span><br><span class="line">		System.out.println(<span class="string">&quot;x is set to: &quot;</span>+x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setY</span><span class="params">(<span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">		y=b;</span><br><span class="line">		System.out.println(<span class="string">&quot;y is set to: &quot;</span>+y);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">double</span> <span class="title">getX</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getY</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> y;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">P2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span> </span>&#123;</span><br><span class="line">		test t1=<span class="keyword">new</span> test();</span><br><span class="line">		t1.setX(<span class="number">5.5</span>);</span><br><span class="line">		t1.setY(<span class="number">5</span>);</span><br><span class="line">		<span class="keyword">double</span> a =t1.getX();</span><br><span class="line">		<span class="keyword">int</span> b=t1.getY();</span><br><span class="line">		System.out.println(<span class="string">&quot;t1&#x27;s x=&quot;</span>+a+<span class="string">&quot; , y=&quot;</span>+b);</span><br><span class="line">		</span><br><span class="line">		test t2=<span class="keyword">new</span> test();</span><br><span class="line">		t2.setX(<span class="number">8.7</span>);</span><br><span class="line">		t2.setY(<span class="number">10</span>);</span><br><span class="line">		<span class="keyword">double</span> a1 =t2.getX();</span><br><span class="line">		<span class="keyword">int</span> b1=t2.getY();</span><br><span class="line">		System.out.println(<span class="string">&quot;t2&#x27;s x=&quot;</span>+a1+<span class="string">&quot; , y=&quot;</span>+b1);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>编写一个 Java 程序，用于计算二维平面空间中一条直线的长度。<br>要求： （1）创建一个类（Point），用于描述二维空间中的点（横坐标和纵坐标皆<br>为 int 型） ；（ 2）创建一个类（Line），用于描述二维空间中的一条直线，要求利<br>用前面定义的 Point 创建一个直线，并通过 Java 的 Math 类中静态方法计算一条<br>直线的距离；（3）创建一个新类，在主函数中输入一条二维空间中的直线信息，<br>计算并输出直线长度。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3、 编写一个 Java 程序，用于计算二维平面空间中一条直线的长度。</span></span><br><span class="line"><span class="comment">//要求：</span></span><br><span class="line"><span class="comment">//（1）创建一个类（Point），用于描述二维空间中的点（横坐标和纵坐标皆为 int 型）；</span></span><br><span class="line"><span class="comment">//（2）创建一个类（Line），用于描述二维空间中的一条直线，要求利用前面定义的 Point 创建一个直线，并通过 Java 的 Math 类中静态方法计算一条直线的距离；</span></span><br><span class="line"><span class="comment">//（3）创建一个新类，在主函数中输入一条二维空间中的直线信息，计算并输出直线长度。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> a,b;</span><br><span class="line">	Point()&#123;</span><br><span class="line">		a=<span class="number">0</span>;</span><br><span class="line">		b=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	Point(<span class="keyword">double</span> a,<span class="keyword">double</span> b)&#123;</span><br><span class="line">		<span class="keyword">this</span>.a=a;</span><br><span class="line">		<span class="keyword">this</span>.b=b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setA</span><span class="params">(<span class="keyword">double</span> a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.a=a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setB</span><span class="params">(<span class="keyword">double</span> b)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.b=b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">getA</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">getB</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> Point p1=<span class="keyword">new</span> Point();</span><br><span class="line">	<span class="keyword">static</span> Point p2=<span class="keyword">new</span> Point();</span><br><span class="line">	Line(<span class="keyword">double</span> x1,<span class="keyword">double</span> y1,<span class="keyword">double</span> x2,<span class="keyword">double</span> y2)&#123;</span><br><span class="line">		p1.setA(x1);</span><br><span class="line">		p1.setB(y1);</span><br><span class="line">		p2.setA(x2);</span><br><span class="line">		p2.setB(y2);</span><br><span class="line">	&#125;</span><br><span class="line">	Line()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">double</span> <span class="title">computeDistance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> d;</span><br><span class="line">		d=Math.sqrt(Math.pow((p1.getA()-p2.getA()), <span class="number">2</span>)+Math.pow(p1.getB()-p2.getB(), <span class="number">2</span>));</span><br><span class="line">		<span class="keyword">return</span> d;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">P3</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span> </span>&#123;</span><br><span class="line">		Line l=<span class="keyword">new</span> Line(<span class="number">4</span>,<span class="number">5.5</span>,<span class="number">6</span>,<span class="number">7.8</span>);</span><br><span class="line">		<span class="keyword">double</span> d =l.computeDistance();</span><br><span class="line">		System.out.println(<span class="string">&quot;the line l&#x27;s length is: &quot;</span>+d);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          打赏
+        </div>
+        
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E5%9B%9B/" data-id="cksn05fb0000bddnq3vmgf7wn"
+        class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" rel="tag">Java课程实验</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E4%B8%89/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Java实验三
+          
+        </div>
+      </a>
+    
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'ii72g4FswY4weGoRf3f3Y7Od-gzGzoHsz',
+        app_key: 'tESihNbvbqmjF5kFmAV9QkaK',
+        path: window.location.pathname,
+        avatar: 'robohash',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2021
+        Aoxue
+      </li>
+      <li>
+        
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a> by shenyu
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <ul class="list-inline">
+  <li>PV:<span id="busuanzi_value_page_pv"></span></li>
+  <li>UV:<span id="busuanzi_value_site_uv"></span></li>
+</ul>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aoxue-blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+  <link rel="stylesheet" href="APlayer.min.css">
+<div id="aplayer"></div>
+<script src="APlayer.min.js"></script>
+
+</html>

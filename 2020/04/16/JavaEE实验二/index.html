@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="思考,代码,博客" />
+   
+  <meta name="description" content="record some ideas" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    JavaEE实验二 |  Aoxue-blog
+  </title>
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+</html>
+<body>
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-JavaEE实验二" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  JavaEE实验二
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/16/JavaEE%E5%AE%9E%E9%AA%8C%E4%BA%8C/" class="article-date">
+  <time datetime="2020-04-16T14:37:38.000Z" itemprop="datePublished">2020-04-16</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>《JavaEE开发技术》课程第二周实验题目和代码。</p>
+<span id="more"></span>
+
+<h3 id="第一题-登录系统实验"><a href="#第一题-登录系统实验" class="headerlink" title="第一题 登录系统实验"></a>第一题 登录系统实验</h3><p>（1） 建立 3 个 JSP 页面，第 1 个页面输入用户登录信息、第 2 个页面用于检测用户登录信息、第3 个页面用于显示登录结果。<br>（2） 第 2 个页面中使用 JSP 脚本、jsp:forward、request 等基础语法、动作指令和内置对象。<br>（3） 第 3 个页面中使用 JSP 表达式和 request 内置对象。  </p>
+<p> 第一个页面Login.jsp</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> <span class="keyword">import</span>=<span class="string">&quot;java.util.*&quot;</span> pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line"><span class="built_in">String</span> path = request.getContextPath();</span><br><span class="line"><span class="built_in">String</span> basePath = request.getScheme()+<span class="string">&quot;://&quot;</span>+request.getServerName()+<span class="string">&quot;:&quot;</span>+request.getServerPort()+path+<span class="string">&quot;/&quot;</span>;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;title&gt;My JSP &#x27;Login.jsp&#x27; starting page&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">	&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;    </span><br><span class="line">	&lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;</span><br><span class="line">	&lt;!--</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;</span><br><span class="line">	--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;form action=&quot;loginCL.jsp&quot; method=&quot;post&quot; name=form&gt;&lt;br&gt;</span><br><span class="line">    </span><br><span class="line">      &lt;h1&gt;Please input your message:&lt;/h1&gt;&lt;br&gt;</span><br><span class="line">      </span><br><span class="line">                   用户名:</span><br><span class="line">     &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br&gt;&lt;br&gt; </span><br><span class="line">     </span><br><span class="line">                  密&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;码:  </span><br><span class="line">     &lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; </span><br><span class="line">        </span><br><span class="line">     &lt;input type=&quot;submit&quot; value=&quot;登陆&quot; name=&quot;submit&quot;&gt;    </span><br><span class="line">     </span><br><span class="line">     &lt;input type=&quot;reset&quot; value=&quot;重置&quot;&gt;&lt;br&gt;</span><br><span class="line">     </span><br><span class="line">   &lt;/form&gt;</span><br><span class="line">   </span><br><span class="line">   &lt;%request.setAttribute(&quot;usertxt&quot;, &quot; &quot;); %&gt;</span><br><span class="line">   &lt;%=(String)request.getAttribute(&quot;usertxt&quot;) %&gt;</span><br><span class="line"> </span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> 第二个页面loginCL.jsp  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"> &lt;%@ page language=<span class="string">&quot;java&quot;</span> <span class="keyword">import</span>=<span class="string">&quot;java.util.*&quot;</span> pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line"><span class="built_in">String</span> path = request.getContextPath();</span><br><span class="line"><span class="built_in">String</span> basePath = request.getScheme()+<span class="string">&quot;://&quot;</span>+request.getServerName()+<span class="string">&quot;:&quot;</span>+request.getServerPort()+path+<span class="string">&quot;/&quot;</span>;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;title&gt;My JSP &#x27;loginCL.jsp&#x27; starting page&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">	&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;    </span><br><span class="line">	&lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;</span><br><span class="line">	&lt;!--</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;</span><br><span class="line">	--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;%</span><br><span class="line"></span><br><span class="line">    String referer = request.getHeader(&quot;Referer&quot;);</span><br><span class="line">    </span><br><span class="line">    //判断是否从Login页面跳转过来</span><br><span class="line">    if(referer==null||!referer.equals(&quot;http://localhost:8080/Login/Login.jsp&quot;))&#123;</span><br><span class="line"></span><br><span class="line">        response.sendRedirect(&quot;Login.jsp&quot;);</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">     //设置对客户端请求和数据库取值时的编码</span><br><span class="line">     request.setCharacterEncoding(&quot;utf-8&quot;);</span><br><span class="line"></span><br><span class="line">     response.setContentType(&quot;text/html;charset=utf-8&quot;);</span><br><span class="line"></span><br><span class="line">     String name=request.getParameter(&quot;username&quot;);</span><br><span class="line"></span><br><span class="line">     String password=request.getParameter(&quot;password&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     //判断登陆界面的用户名和密码，根据输入的不同情况进行不同的处理</span><br><span class="line">    if(name.trim().length()!=0 &amp;&amp; password.trim().length()!=0)&#123;</span><br><span class="line"></span><br><span class="line">      request.setAttribute(&quot;usertxt&quot;, &quot;正常登录！！！&quot;);</span><br><span class="line"></span><br><span class="line">      request.getRequestDispatcher(&quot;success.jsp&quot;).forward(request, response);</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    else&#123;</span><br><span class="line"></span><br><span class="line">      request.setAttribute(&quot;usertxt&quot;, &quot;用户名或密码错误！！！&quot;);</span><br><span class="line"></span><br><span class="line">      request.getRequestDispatcher(&quot;Login.jsp&quot;).forward(request, response);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     </span><br><span class="line"></span><br><span class="line">%&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">  第三个页面success.jsp  </span><br><span class="line">```javascript</span><br><span class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">String path = request.getContextPath();</span><br><span class="line">String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;title&gt;My JSP &#x27;success.jsp&#x27; starting page&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">	&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;    </span><br><span class="line">	&lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;</span><br><span class="line">	&lt;!--</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;</span><br><span class="line">	--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;%=(String)request.getAttribute(&quot;usertxt&quot;) %&gt;&lt;br&gt;</span><br><span class="line">    &lt;%</span><br><span class="line"></span><br><span class="line">         String referer = request.getHeader(&quot;Referer&quot;);</span><br><span class="line">          </span><br><span class="line">         if(referer==null||!referer.equals(&quot;http://localhost:8080/Login/Login.jsp&quot;))&#123;</span><br><span class="line"></span><br><span class="line">            response.sendRedirect(&quot;Login.jsp&quot;);</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line">          </span><br><span class="line">         request.setCharacterEncoding(&quot;utf-8&quot;);</span><br><span class="line"></span><br><span class="line">         response.setContentType(&quot;text/html;charset=utf-8&quot;);</span><br><span class="line">         </span><br><span class="line">         String name=request.getParameter(&quot;username&quot;);</span><br><span class="line"></span><br><span class="line">         String password=request.getParameter(&quot;password&quot;);</span><br><span class="line">         </span><br><span class="line">         out.println(&quot;usename: &quot;+name+&quot;&lt;br&gt;&quot;);</span><br><span class="line">         </span><br><span class="line">         out.println(&quot;pwd: &quot;+password+&quot;&lt;br&gt;&quot;);</span><br><span class="line"></span><br><span class="line">    %&gt;  </span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="第二题-注册学生用户信息实验"><a href="#第二题-注册学生用户信息实验" class="headerlink" title="第二题 注册学生用户信息实验"></a>第二题 注册学生用户信息实验</h3><p>（1） 建立 3 个 JSP 页面，第 1 个页面输入学生基本信息、第 2 个页面构建一个 JavaBean 实例，并将学生信息存入到实例中、第 3 个页面用于显示学生的注册信息。注册页面内容包括：用户名、密码、性别、年龄、国别、邮箱、电话号码。<br>（2） 第 2 个页面中使用 jsp:useBean 和 jsp:setProperty 动作指令、request 内置对象。<br>（3） 第 3 个页面中使用 jsp:getProperty 动作指令。  </p>
+<p> 第一个页面register.jsp</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> <span class="keyword">import</span>=<span class="string">&quot;java.util.*&quot;</span> pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line"><span class="built_in">String</span> path = request.getContextPath();</span><br><span class="line"><span class="built_in">String</span> basePath = request.getScheme()+<span class="string">&quot;://&quot;</span>+request.getServerName()+<span class="string">&quot;:&quot;</span>+request.getServerPort()+path+<span class="string">&quot;/&quot;</span>;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;title&gt;My JSP &#x27;register.jsp&#x27; starting page&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">	&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;    </span><br><span class="line">	&lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;</span><br><span class="line">	&lt;!--</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;</span><br><span class="line">	--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">    request.setCharacterEncoding(&quot;utf-8&quot;);</span><br><span class="line">    %&gt;</span><br><span class="line">    &lt;jsp:useBean id=&quot;reg&quot; scope=&quot;request&quot; class=&quot;test.register&quot;/&gt;</span><br><span class="line">    &lt;form action=&quot;check.jsp&quot; method=&quot;post&quot; name=form&gt;&lt;br&gt;</span><br><span class="line">    </span><br><span class="line">      &lt;h1&gt;Register:&lt;/h1&gt;&lt;br&gt;</span><br><span class="line">      </span><br><span class="line">                   用户名:</span><br><span class="line">     &lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;&lt;jsp:getProperty name=&quot;reg&quot; property=&quot;name&quot;/&gt;&quot;&gt;</span><br><span class="line">     &lt;%=reg.getErrorMsg(&quot;errname&quot;) %&gt;&lt;br&gt;&lt;br&gt; </span><br><span class="line">     </span><br><span class="line">                  密&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;码:  </span><br><span class="line">     &lt;input type=&quot;password&quot; name=&quot;password&quot; value=&quot;&lt;jsp:getProperty name=&quot;reg&quot; property=&quot;pwd&quot;/&gt;&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">     </span><br><span class="line">                  性&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;别：</span><br><span class="line">     &lt;input type=&quot;radio&quot; id=&quot;ids&quot; name=&quot;sex&quot; value=&quot;男&quot; checked=&quot;checked&quot; /&gt;男</span><br><span class="line">     &lt;input type=&quot;radio&quot; id=&quot;ids&quot; name=&quot;sex&quot; value=&quot;女&quot; /&gt;女&lt;br&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">                  </span><br><span class="line">                   年&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;龄：</span><br><span class="line">     &lt;input type=&quot;text&quot; name=&quot;age&quot; value=&quot;&lt;jsp:getProperty name=&quot;reg&quot; property=&quot;age&quot;/&gt;&quot;&gt;</span><br><span class="line">     &lt;%=reg.getErrorMsg(&quot;errage&quot;) %&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">                  </span><br><span class="line">                   国&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;别：</span><br><span class="line">     &lt;input type=&quot;text&quot; name=&quot;nation&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">     </span><br><span class="line">                   邮&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;箱：</span><br><span class="line">     &lt;input type=&quot;text&quot; name=&quot;email&quot; value=&quot;&lt;jsp:getProperty name=&quot;reg&quot; property=&quot;email&quot;/&gt;&quot;&gt;</span><br><span class="line">     &lt;%=reg.getErrorMsg(&quot;erremail&quot;) %&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">     </span><br><span class="line">                   电话号码：</span><br><span class="line">     &lt;input type=&quot;text&quot; name=&quot;phone&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">     &lt;br&gt;&lt;br&gt; </span><br><span class="line">        </span><br><span class="line">     &lt;input type=&quot;submit&quot; value=&quot;注册&quot; name=&quot;submit&quot;&gt;    </span><br><span class="line">     </span><br><span class="line">     &lt;input type=&quot;reset&quot; value=&quot;重置&quot;&gt;&lt;br&gt;</span><br><span class="line">     </span><br><span class="line">   &lt;/form&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"> 第二个页面check.jsp</span><br><span class="line">``` javascript</span><br><span class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">String path = request.getContextPath();</span><br><span class="line">String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;title&gt;My JSP &#x27;check.jsp&#x27; starting page&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">	&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;    </span><br><span class="line">	&lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;</span><br><span class="line">	&lt;!--</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;</span><br><span class="line">	--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">  &lt;%</span><br><span class="line">    request.setCharacterEncoding(&quot;utf-8&quot;);</span><br><span class="line">  %&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;%--将表单数据传到Javabean实例 --%&gt;</span><br><span class="line">  &lt;jsp:useBean id=&quot;reg&quot; scope=&quot;request&quot; class=&quot;test.register&quot;/&gt;</span><br><span class="line">  &lt;jsp:setProperty property=&quot;*&quot; name=&quot;reg&quot;/&gt;</span><br><span class="line">  &lt;jsp:setProperty property=&quot;pwd&quot; name=&quot;reg&quot; param=&quot;password&quot;/&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;%--JavaBean中方法调用判断是否是合法输入 --%&gt;</span><br><span class="line">    if(reg.isValidate())&#123;</span><br><span class="line">     request.getRequestDispatcher(&quot;success.jsp&quot;).forward(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    else&#123;</span><br><span class="line">    request.getRequestDispatcher(&quot;register.jsp&quot;).forward(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"> 第三个页面success.jsp</span><br><span class="line">``` javascript</span><br><span class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">String path = request.getContextPath();</span><br><span class="line">String basePath = request.getScheme()+&quot;://&quot;+request.getServerName()+&quot;:&quot;+request.getServerPort()+path+&quot;/&quot;;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;title&gt;My JSP &#x27;success.jsp&#x27; starting page&lt;/title&gt;</span><br><span class="line">    </span><br><span class="line">	&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;    </span><br><span class="line">	&lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;</span><br><span class="line">	&lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;</span><br><span class="line">	&lt;!--</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;</span><br><span class="line">	--&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;body&gt;</span><br><span class="line">  &lt;jsp:useBean id=&quot;reg&quot; scope=&quot;request&quot; class=&quot;test.register&quot;/&gt;</span><br><span class="line">  &lt;h2&gt;注册信息&lt;/h2&gt;&lt;br&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;%--显示注册信息从JavaBean获取 --%&gt;  </span><br><span class="line">  &lt;table&gt;</span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;用户名&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;jsp:getProperty property=&quot;name&quot; name=&quot;reg&quot;/&gt;&lt;/td&gt;</span><br><span class="line">      &lt;/tr&gt;</span><br><span class="line">    </span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;密码&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;jsp:getProperty property=&quot;pwd&quot; name=&quot;reg&quot;/&gt;&lt;/td&gt;</span><br><span class="line">      &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;性别&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;jsp:getProperty property=&quot;sex&quot; name=&quot;reg&quot;/&gt;&lt;/td&gt;</span><br><span class="line">      &lt;/tr&gt;    </span><br><span class="line"></span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;年&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;龄&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;jsp:getProperty property=&quot;age&quot; name=&quot;reg&quot;/&gt;&lt;/td&gt;</span><br><span class="line">      &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;国家&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;jsp:getProperty property=&quot;nation&quot; name=&quot;reg&quot;/&gt;&lt;/td&gt;</span><br><span class="line">      &lt;/tr&gt;</span><br><span class="line">    </span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;E-MAIL&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;jsp:getProperty property=&quot;email&quot; name=&quot;reg&quot;/&gt;&lt;/td&gt;</span><br><span class="line">      &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;手机&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;jsp:getProperty property=&quot;phone&quot; name=&quot;reg&quot;/&gt;&lt;/td&gt;</span><br><span class="line">      &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> JavaBean对应的Java类 register.java</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">package test;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">register</span> </span>&#123;</span><br><span class="line">    private <span class="built_in">String</span> name;    <span class="comment">// 名字</span></span><br><span class="line">    private <span class="built_in">String</span> pwd;     <span class="comment">//密码</span></span><br><span class="line">    private <span class="built_in">String</span> sex;     <span class="comment">//性别</span></span><br><span class="line">    private <span class="built_in">String</span> age;      <span class="comment">// 年龄   为了防止用户输入的内容不是数字时，抛出NumberFormat异常，这里使用String存储</span></span><br><span class="line">    private <span class="built_in">String</span> nation;   <span class="comment">//国籍</span></span><br><span class="line">    private <span class="built_in">String</span> email;   <span class="comment">// email</span></span><br><span class="line">    private <span class="built_in">String</span> phone;    <span class="comment">//手机号码</span></span><br><span class="line">    private <span class="built_in">Map</span>&lt;<span class="built_in">String</span>,<span class="built_in">String</span>&gt; errors = <span class="literal">null</span>;   <span class="comment">// 保存错误信息</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    public <span class="function"><span class="title">register</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">this</span>.pwd = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">this</span>.sex = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">this</span>.age = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">this</span>.nation = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">this</span>.email = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">this</span>.phone = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">this</span>.errors = <span class="keyword">new</span> HashMap&lt;<span class="built_in">String</span>,<span class="built_in">String</span>&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//判断部分属性是否合法</span></span><br><span class="line">    public boolean <span class="function"><span class="title">isValidate</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        boolean flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">this</span>.name.matches(<span class="string">&quot;\\w&#123;6,15&#125;&quot;</span>)) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="built_in">this</span>.name = <span class="string">&quot;&quot;</span>; <span class="comment">// 清空原本的name内容</span></span><br><span class="line">            <span class="built_in">this</span>.errors.put(<span class="string">&quot;errname&quot;</span>, <span class="string">&quot;用户名是6～15位的字母或数字&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">this</span>.email.matches(<span class="string">&quot;\\w+@\\w+\\.\\w+\\.?\\w*&quot;</span>)) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="built_in">this</span>.email = <span class="string">&quot;&quot;</span>;    <span class="comment">// 清空原本的email内容</span></span><br><span class="line">            <span class="built_in">this</span>.errors.put(<span class="string">&quot;erremail&quot;</span>, <span class="string">&quot;输入的email的地址不合法&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">this</span>.age.matches(<span class="string">&quot;\\d+&quot;</span>)) &#123;</span><br><span class="line">            flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="built_in">this</span>.age = <span class="string">&quot;&quot;</span>;  <span class="comment">// 清空原本的email内容</span></span><br><span class="line">            <span class="built_in">this</span>.errors.put(<span class="string">&quot;errage&quot;</span>, <span class="string">&quot;年龄只能是数字&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//获取错误提示信息</span></span><br><span class="line">    public <span class="built_in">String</span> <span class="function"><span class="title">getErrorMsg</span>(<span class="params"><span class="built_in">String</span> key</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">String</span> value = <span class="built_in">this</span>.errors.get(key);</span><br><span class="line">        <span class="keyword">return</span> value==<span class="literal">null</span>?<span class="string">&quot;&quot;</span>:value;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//姓名的获取和设置</span></span><br><span class="line">    public <span class="built_in">String</span> <span class="function"><span class="title">getName</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">void</span> <span class="function"><span class="title">setName</span>(<span class="params"><span class="built_in">String</span> name</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">//密码的获取和设置</span></span><br><span class="line">    public <span class="built_in">String</span> <span class="function"><span class="title">getPwd</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> pwd;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">void</span> <span class="function"><span class="title">setPwd</span>(<span class="params"><span class="built_in">String</span> pwd</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.pwd = pwd;</span><br><span class="line">        System.out.println(<span class="string">&quot;setPWD:&quot;</span>+<span class="built_in">this</span>.pwd);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">//年龄的获取和设置</span></span><br><span class="line">    public <span class="built_in">String</span> <span class="function"><span class="title">getAge</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">void</span> <span class="function"><span class="title">setAge</span>(<span class="params"><span class="built_in">String</span> age</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">//性别的获取和设置</span></span><br><span class="line">    public <span class="built_in">String</span> <span class="function"><span class="title">getSex</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> sex;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">void</span> <span class="function"><span class="title">setSex</span>(<span class="params"><span class="built_in">String</span> sex</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">//国籍的获取和设置</span></span><br><span class="line">    public <span class="built_in">String</span> <span class="function"><span class="title">getNation</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nation;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">void</span> <span class="function"><span class="title">setNation</span>(<span class="params"><span class="built_in">String</span> nation</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.nation = nation;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">//错误的获取和设置</span></span><br><span class="line">    public <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">String</span>&gt; <span class="function"><span class="title">getError</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> errors;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">void</span> <span class="function"><span class="title">setError</span>(<span class="params"><span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">String</span>&gt; error</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.errors = error;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">//邮箱的获取和设置</span></span><br><span class="line">    public <span class="built_in">String</span> <span class="function"><span class="title">getEmail</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> email;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">void</span> <span class="function"><span class="title">setEmail</span>(<span class="params"><span class="built_in">String</span> email</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.email = email;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">  <span class="comment">//手机号码的获取和设置</span></span><br><span class="line">    public <span class="built_in">String</span> <span class="function"><span class="title">getPhone</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> phone;</span><br><span class="line">    &#125;</span><br><span class="line">    public <span class="keyword">void</span> <span class="function"><span class="title">setPhone</span>(<span class="params"><span class="built_in">String</span> phone</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.phone = phone;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          打赏
+        </div>
+        
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/16/JavaEE%E5%AE%9E%E9%AA%8C%E4%BA%8C/" data-id="cksn05fb1000gddnq3twng90n"
+        class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaEE%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" rel="tag">JavaEE课程实验</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/06/07/PB--%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            PB--学生选课系统
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/03/12/Java%E5%AE%9E%E9%AA%8C%E5%85%AB/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java实验八</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'ii72g4FswY4weGoRf3f3Y7Od-gzGzoHsz',
+        app_key: 'tESihNbvbqmjF5kFmAV9QkaK',
+        path: window.location.pathname,
+        avatar: 'robohash',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2021
+        Aoxue
+      </li>
+      <li>
+        
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a> by shenyu
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <ul class="list-inline">
+  <li>PV:<span id="busuanzi_value_page_pv"></span></li>
+  <li>UV:<span id="busuanzi_value_site_uv"></span></li>
+</ul>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aoxue-blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+  <link rel="stylesheet" href="APlayer.min.css">
+<div id="aplayer"></div>
+<script src="APlayer.min.js"></script>
+
+</html>

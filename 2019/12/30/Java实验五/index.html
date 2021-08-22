@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="思考,代码,博客" />
+   
+  <meta name="description" content="record some ideas" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Java实验五 |  Aoxue-blog
+  </title>
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+</html>
+<body>
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-Java实验五" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java实验五
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E4%BA%94/" class="article-date">
+  <time datetime="2019-12-30T02:30:20.000Z" itemprop="datePublished">2019-12-30</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>《Java程序设计》课程第五周实验题目和代码。</p>
+<span id="more"></span>
+
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>1、 编写一个程序，通过面向抽象编程思想，实现学位颁发功能。具体设计要求如下。<br>2、 设计一个抽象的 Student 类，具体要求如下：<br>（1） 该抽象类所包含的属性为：<br>String name;<br>char gender;<br>Date birthDay;<br>String school;<br>String stuId;<br>String category;<br>double[] score;<br>boolean status;<br>分别对应学生的姓名、性别、出生日期、学校、学号、学生类别、课程成绩、<br>学位颁发状态。分别要求包含对应属性的 set/get 方法。<br>（2） 同时，定义如下三个抽象方法：<br>public abstract boolean getPass();<br>public abstract double computeAverage();<br>public abstract String getDegree();<br>分别用于判定是否满足学位颁发条件、计算学生课程平均值、以及判定是否颁<br>发学位。<br>3、 设计一个继承 Student 抽象类的具体类 Undergraduate 类，具体要求如下：<br>（1） 定义一个 double 型变量 aver，用于保存该类中大学生课程成绩的平均值；<br>（2） 重写 Student 类中定义的三个抽象方法。<br>（3） 在重写 computeAverage()方法过程中，要求通过算术平均值计算大学生课程<br>平均分。<br>（4） 在重写 getPass()方法过程中，根据大学生课程平均分判定，若课程成绩平<br>均分 aver 大于等于 60 分，则满足学位颁发要求，改变学位颁发状态。<br>（5） 在重写 getDegree()方法过程中，根据学生的学位颁发状态，确定是否授予<br>“学士学位”的决定。<br> 4、 设计一个继承 Student 抽象类的具体类 Master 类，具体要求如下：<br>（1） 定义一个 double 型变量 aver，用于保存硕士研究生课程成绩的平均值；定<br>义字符型一个变量 thesisLevel，用于保存硕士研究生学位论文等级（取值<br>范围为’A’,’B’,’C’,’D’,’E’）。<br>（2） 重写 Student 类中定义的三个抽象方法。<br>（3） 在重写 computeAverage()方法过程中，要求通过几何平均值计算硕士研究生<br>课程平均分。<br>（4） 在重写 getPass()方法过程中，根据硕士研究生课程平均分和学位论文两个<br>方面判定，若课程成绩平均分 aver 大于等于 80 分且学位论文等级为’C’及其<br>以上，则满足学位颁发要求，改变学位颁发状态。<br>（5） 在重写 getDegree()方法过程中，根据硕士研究生的学位颁发状态，确定是<br>否授予“硕士学位”的决定。<br>5、 设计一个具体类 StudentDegree，用于管理各类学生的学位授予。具体要求如下：<br>（1） 该类包含两个方法：<br>public void printStudentInfo(Student student)<br>public void issueDegree(Student student)<br>分别用于输出学生的基本信息（包括姓名、性别、出生日期、学校、学号、<br>学生类别、平均成绩、平均分）、输出学生授予学位情况。<br>（2） 提示：在第 1 个方法 printStudentInfo 中，通过抽象类作为各类学生的<br>上转型对象，调用重写方法 computeAverage（），计算对应学生类别的对象<br>平均课程成绩；<br>（3） 提示：在第 2 个方法 issueDegree 中，通过抽象类作为各类学生的上转型<br>对象，调用重写方法 getDegree（），输出对应学生类型的对象的学位授予情<br>况。<br>6、 设计一个测试类 StudentApplication，用于测试学生学位授予情况。具体要求如下：<br>（1） 创建一个 Student 对象 student，用于作为上转型对象。<br>（2） 创建一个 Undergraduate 类对象 undergraduate，采用如下赋值：<br>String name=”王小二”;<br>char gender=’男’;<br>Date birthday=”1995-6-1”;<br>String school=”上海大学”;<br>String stuId=”11128981”;<br>String category=”大学本科生”;<br>double[] score={89.5, 82, 87, 73};<br>boolean status=false;<br>（3） 创建一个 Master 对象 master，采用如下赋值：<br>String name=”李燕”;<br>char gender=”女”;<br>Date birthday=”1991-6-12”;<br>String school=”上海大学”;<br>String stuId=”10306”;<br>String category=’硕士研究生’;<br>double[] score={70, 52.5, 95, 88, 89, 91};<br>char thesisLevel=’B’;<br>boolean status=false;<br>（4） 创建一个 StudentDegree 类的对象 studentDegree，用于测试学位授予。<br>（5） 分别使用 student 作为 undergraduate 和 master 的上转型对象，测试<br>studentDegree 使用 student 上转型对象，输出学生信息和学位授予情况。<br>为了便于各类常量符合管理，我们可以创建一个类 Constants,里面定义各类在此<br>Java 程序中使用到的常量，分别如下：<br>public class Constants {<br>public final static String UNDERGRADUATE = “大学本科生”;<br>public final static String MASTER = “硕士研究生”;<br>public final static String ISSUE_UNDERGRADUATE_DEGREE=”颁发学士学位”;<br>public final static String ISSUE_MASTER_DEGREE=”颁发硕士学位”;<br>public final static String UNSATISFACTORY_ISSUE_UNDERGRADUATE_DEGREE=”不满足颁发学士学位要”;<br>public final static String UNSATISFACTORY_ISSUE_MASTER_DEGREE=”不满足颁发硕士学位要求”;<br>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.text.DateFormat;</span><br><span class="line"><span class="keyword">import</span> java.text.ParseException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个类 Constants,里面定义各类在此Java 程序中使用到的常量，分别如下：</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Constants</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String UNDERGRADUATE = <span class="string">&quot;大学本科生&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String MASTER = <span class="string">&quot;硕士研究生&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String ISSUE_UNDERGRADUATE_DEGREE=<span class="string">&quot;颁发学士学位&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String ISSUE_MASTER_DEGREE=<span class="string">&quot;颁发硕士学位&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String UNSATISFACTORY_ISSUE_UNDERGRADUATE_DEGREE=<span class="string">&quot;不满足颁发学士学位要求&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String UNSATISFACTORY_ISSUE_MASTER_DEGREE=<span class="string">&quot;不满足颁发硕士学位要求&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象类Student</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;      <span class="comment">//学生姓名</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">char</span> gender;      <span class="comment">//学生性别</span></span><br><span class="line">	<span class="keyword">private</span> Date birthDay;    <span class="comment">//学生出生日期</span></span><br><span class="line">	<span class="keyword">private</span> String school;    <span class="comment">//学校</span></span><br><span class="line">	<span class="keyword">private</span> String stuId;     <span class="comment">//学号</span></span><br><span class="line">	<span class="keyword">private</span> String category;   <span class="comment">//学生类别</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> []score;     <span class="comment">//课程成绩</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> status;       <span class="comment">//学位颁发状态</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置和获得学生姓名</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置和获得学生性别</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setGender</span><span class="params">(<span class="keyword">char</span> gender)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.gender=gender;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">char</span> <span class="title">getGender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> gender;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置和获得学生出生日期</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setBirthDay</span><span class="params">(Date birthday)</span> </span>&#123;</span><br><span class="line">		birthDay=birthday;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">Date <span class="title">getBirthDay</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> birthDay;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置和获得学生学院</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setSchool</span><span class="params">(String school)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.school=school;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">String <span class="title">getSchool</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> school;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置和获得学生学号</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setStuId</span><span class="params">(String stuId)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.stuId=stuId;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">String <span class="title">getStuId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> stuId;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置和获得学生类别</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setCategory</span><span class="params">(String category)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.category=category;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">String <span class="title">getCategory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> category;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置和获得学生成绩</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setScore</span><span class="params">(<span class="keyword">double</span> []s)</span> </span>&#123;</span><br><span class="line">		score=s;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">double</span>[] getScore() &#123;</span><br><span class="line">		<span class="keyword">return</span> score;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//设置和获得学生学位颁发状态</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setStatus</span><span class="params">(<span class="keyword">boolean</span> s)</span> </span>&#123;</span><br><span class="line">		status=s;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">boolean</span> <span class="title">getStatus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> status;</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">boolean</span> <span class="title">getPass</span><span class="params">()</span></span>;     <span class="comment">//判断是否满足学位颁发条件</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">computeAverage</span><span class="params">()</span></span>;    <span class="comment">//计算学生课程平均值</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> String <span class="title">getDegree</span><span class="params">()</span></span>;         <span class="comment">//判定是否发学位</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Undergraduate</span> <span class="keyword">extends</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> aver;  <span class="comment">//大学生课程成绩的平均值</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//判断是否满足学位颁发条件</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">getPass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> a;</span><br><span class="line">		a=computeAverage();</span><br><span class="line">		<span class="keyword">if</span>(a&gt;=<span class="number">60</span>) &#123;</span><br><span class="line">			<span class="keyword">boolean</span> k=<span class="keyword">true</span>;</span><br><span class="line">			setStatus(k);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//计算学生课程平均值</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">computeAverage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> []score;</span><br><span class="line">		<span class="keyword">int</span> i,n;</span><br><span class="line">		<span class="keyword">double</span> undergraduatem=<span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		score=getScore();</span><br><span class="line">		n=score.length;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">			undergraduatem+=score[i];</span><br><span class="line">		&#125;</span><br><span class="line">		aver=undergraduatem/n;</span><br><span class="line">		<span class="keyword">return</span> aver;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//判定是否发学位</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getDegree</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> k=getStatus();</span><br><span class="line">		<span class="keyword">if</span>(k==<span class="keyword">true</span>)</span><br><span class="line">			<span class="keyword">return</span> Constants.ISSUE_UNDERGRADUATE_DEGREE;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> Constants.UNSATISFACTORY_ISSUE_UNDERGRADUATE_DEGREE;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Master</span> <span class="keyword">extends</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> aver;  <span class="comment">//硕士研究生课程成绩的平均值</span></span><br><span class="line">	<span class="keyword">char</span> thesislevel; <span class="comment">//硕士研究生学位论文等级</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setThesislevel</span><span class="params">(<span class="keyword">char</span> t)</span> </span>&#123;</span><br><span class="line">		thesislevel=t;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//判断是否满足学位颁发条件</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">getPass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> a;</span><br><span class="line">		a=computeAverage();</span><br><span class="line">		<span class="keyword">if</span>(a&gt;=<span class="number">80</span> &amp;&amp; (thesislevel==<span class="string">&#x27;C&#x27;</span>||thesislevel==<span class="string">&#x27;B&#x27;</span>||thesislevel==<span class="string">&#x27;A&#x27;</span>)) &#123;</span><br><span class="line">			<span class="keyword">boolean</span> k=<span class="keyword">true</span>;</span><br><span class="line">			setStatus(k);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//计算硕士研究生课程几何平均值</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">computeAverage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">double</span> []score;</span><br><span class="line">		<span class="keyword">int</span> i,n;</span><br><span class="line">		<span class="keyword">double</span> undergraduatem=<span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">		score=getScore();</span><br><span class="line">		n=score.length;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">			undergraduatem*=score[i];</span><br><span class="line">		&#125;</span><br><span class="line">		aver=Math.pow(undergraduatem,<span class="number">1.0</span>/n);</span><br><span class="line">		<span class="keyword">return</span> aver;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//判定是否发学位</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getDegree</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> k=getStatus();</span><br><span class="line">		<span class="keyword">if</span>(k==<span class="keyword">true</span>)</span><br><span class="line">			<span class="keyword">return</span> Constants.ISSUE_MASTER_DEGREE;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span> Constants.UNSATISFACTORY_ISSUE_MASTER_DEGREE;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentDegree</span></span>&#123;</span><br><span class="line">	<span class="comment">//输出学生的基本信息（包括姓名、性别、出生日期、学校、学号、学生类别、平均成绩、平均分)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printStudentInfo</span><span class="params">(Student student)</span> </span>&#123;</span><br><span class="line">		String name;      <span class="comment">//学生姓名</span></span><br><span class="line">		<span class="keyword">char</span> gender;      <span class="comment">//学生性别</span></span><br><span class="line">		Date birthDay;    <span class="comment">//学生出生日期</span></span><br><span class="line">		String school;    <span class="comment">//学校</span></span><br><span class="line">		String stuId;     <span class="comment">//学号</span></span><br><span class="line">		String category;   <span class="comment">//学生类别</span></span><br><span class="line">		<span class="keyword">double</span> avg;     <span class="comment">//平均成绩</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//获得学生的基本信息（包括姓名、性别、出生日期、学校、学号、学生类别、平均成绩、平均分)</span></span><br><span class="line">	    name=student.getName();</span><br><span class="line">	    gender=student.getGender();</span><br><span class="line">	    birthDay=student.getBirthDay();</span><br><span class="line">	    school=student.getSchool();</span><br><span class="line">	    stuId=student.getStuId();</span><br><span class="line">	    category=student.getCategory();</span><br><span class="line">	    avg=student.computeAverage();</span><br><span class="line">	    </span><br><span class="line">	  <span class="comment">//输出学生的基本信息（包括姓名、性别、出生日期、学校、学号、学生类别、平均成绩、平均分)</span></span><br><span class="line">	    System.out.println(<span class="string">&quot;学生姓名: &quot;</span>+name);</span><br><span class="line">	    System.out.println(<span class="string">&quot;学生性别: &quot;</span>+gender);</span><br><span class="line">	    System.out.println(<span class="string">&quot;学生出生日期: &quot;</span>+birthDay);</span><br><span class="line">	    System.out.println(<span class="string">&quot;学生学校: &quot;</span>+school);</span><br><span class="line">	    System.out.println(<span class="string">&quot;学生学号: &quot;</span>+stuId);</span><br><span class="line">	    System.out.println(<span class="string">&quot;学生学号: &quot;</span>+category);</span><br><span class="line">	    System.out.println(<span class="string">&quot;学生成绩: &quot;</span>+avg);</span><br><span class="line">	    </span><br><span class="line">	 &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//输出学生授予学位情况</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">isundergraduateeDegree</span><span class="params">(Student student)</span> </span>&#123;</span><br><span class="line">		String s;</span><br><span class="line">		student.getPass();</span><br><span class="line">		student.computeAverage();</span><br><span class="line">		s=student.getDegree();</span><br><span class="line">		System.out.println(<span class="string">&quot;学生学位授予情况: &quot;</span>+s);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentApplication</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span><span class="keyword">throws</span> ParseException </span>&#123;</span><br><span class="line">		<span class="comment">//创建一个 Student 对象 student，用于作为上转型对象</span></span><br><span class="line">		Student student;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//创建一个 Undergraduate 类对象 undergraduate，采用如下赋值</span></span><br><span class="line">		Undergraduate undergraduate =<span class="keyword">new</span> Undergraduate();</span><br><span class="line">		DateFormat dateFormat = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line">		Date myDate1 = dateFormat.parse(<span class="string">&quot;2009-06-01&quot;</span>);</span><br><span class="line">		<span class="keyword">double</span> []score1= &#123;<span class="number">89.5</span>, <span class="number">82</span>, <span class="number">87</span>, <span class="number">73</span>&#125;;</span><br><span class="line">		</span><br><span class="line">		undergraduate.setName(<span class="string">&quot;王小二&quot;</span>);</span><br><span class="line">		undergraduate.setGender(<span class="string">&#x27;男&#x27;</span>);</span><br><span class="line">		undergraduate.setBirthDay(myDate1);</span><br><span class="line">		undergraduate.setSchool(<span class="string">&quot;上海大学&quot;</span>);</span><br><span class="line">		undergraduate.setStuId(<span class="string">&quot;11128981&quot;</span>);</span><br><span class="line">		undergraduate.setCategory(Constants.UNDERGRADUATE);</span><br><span class="line">		undergraduate.setScore(score1);</span><br><span class="line">		undergraduate.setStatus(<span class="keyword">false</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//创建一个 Master 对象 master，采用如下赋值</span></span><br><span class="line">		Master master=<span class="keyword">new</span> Master();</span><br><span class="line">		DateFormat dateFormat1 = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line">		Date myDate2 = dateFormat1.parse(<span class="string">&quot;2009-06-01&quot;</span>);</span><br><span class="line">		<span class="keyword">double</span> []score2= &#123;<span class="number">70</span>, <span class="number">52.5</span>, <span class="number">95</span>, <span class="number">88</span>, <span class="number">89</span>, <span class="number">91</span>&#125;;</span><br><span class="line">		</span><br><span class="line">		master.setName(<span class="string">&quot;李燕&quot;</span>);</span><br><span class="line">		master.setGender(<span class="string">&#x27;女&#x27;</span>);</span><br><span class="line">		master.setBirthDay(myDate2);</span><br><span class="line">		master.setSchool(<span class="string">&quot;上海大学&quot;</span>);</span><br><span class="line">		master.setStuId(<span class="string">&quot;10306&quot;</span>);</span><br><span class="line">		master.setCategory(Constants.MASTER);</span><br><span class="line">		master.setScore(score2);</span><br><span class="line">		master.setThesislevel(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">		master.setStatus(<span class="keyword">false</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//创建一个 StudentDegree 类的对象 studentDegree，用于测试学位授予。</span></span><br><span class="line">		StudentDegree studentDegree=<span class="keyword">new</span> StudentDegree();</span><br><span class="line">		studentDegree.isundergraduateeDegree(undergraduate);</span><br><span class="line">		studentDegree.isundergraduateeDegree(master);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//使用student作为 undergraduate的上转型对象,测试studentDegree 使用 student 上转型对象，输出学生信息和学位授予情况。</span></span><br><span class="line">		student=undergraduate;</span><br><span class="line">		studentDegree.printStudentInfo(student);</span><br><span class="line">		studentDegree.isundergraduateeDegree(student);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//使用 student作为  master 的上转型对象，测试studentDegree 使用 student 上转型对象，输出学生信息和学位授予情况。</span></span><br><span class="line">		student=master;</span><br><span class="line">		studentDegree.printStudentInfo(student);</span><br><span class="line">		studentDegree.isundergraduateeDegree(student);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><h4 id="关于Date类型"><a href="#关于Date类型" class="headerlink" title="关于Date类型"></a>关于Date类型</h4><h5 id="a-获取当前日期和时间"><a href="#a-获取当前日期和时间" class="headerlink" title="a. 获取当前日期和时间"></a>a. 获取当前日期和时间</h5><p>这是一种在Java中获取当前日期和时间的简单方法。可以使用<code>Date</code>对象<code>toString()</code>方法来打印当前日期和时间，如下图所示。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">      <span class="comment">// 实例化Date对象</span></span><br><span class="line">      Date date = <span class="keyword">new</span> Date();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// display time and date using toString()</span></span><br><span class="line">      System.out.println(date.toString());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="b-使用SimpleDateFormat设置日期格式"><a href="#b-使用SimpleDateFormat设置日期格式" class="headerlink" title="b. 使用SimpleDateFormat设置日期格式"></a>b. 使用SimpleDateFormat设置日期格式</h5><p><code>SimpleDateFormat</code>是一个具体的类，用于以区域设置的方式格式化和解析日期。 <code>SimpleDateFormat</code>用于从为日期时间格式选择用户定义的模式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        Date dNow = <span class="keyword">new</span> Date();</span><br><span class="line">        SimpleDateFormat ft = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy.MM.dd (E)&#x27;at&#x27; hh:mm:ss a zzz&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;Current Date: &quot;</span> + ft.format(dNow));</span><br><span class="line"></span><br><span class="line">        SimpleDateFormat ft2 = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd hh:mm:ss&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;Current Datetime: &quot;</span> + ft2.format(dNow));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          打赏
+        </div>
+        
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E4%BA%94/" data-id="cksn05fax0004ddnqe05zesd8"
+        class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" rel="tag">Java课程实验</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/01/04/Java%E5%AE%9E%E9%AA%8C%E5%85%AD/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Java实验六
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E4%BA%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java实验二</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'ii72g4FswY4weGoRf3f3Y7Od-gzGzoHsz',
+        app_key: 'tESihNbvbqmjF5kFmAV9QkaK',
+        path: window.location.pathname,
+        avatar: 'robohash',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2021
+        Aoxue
+      </li>
+      <li>
+        
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a> by shenyu
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <ul class="list-inline">
+  <li>PV:<span id="busuanzi_value_page_pv"></span></li>
+  <li>UV:<span id="busuanzi_value_site_uv"></span></li>
+</ul>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aoxue-blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+  <link rel="stylesheet" href="APlayer.min.css">
+<div id="aplayer"></div>
+<script src="APlayer.min.js"></script>
+
+</html>

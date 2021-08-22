@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="思考,代码,博客" />
+   
+  <meta name="description" content="record some ideas" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Java实验八 |  Aoxue-blog
+  </title>
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+</html>
+<body>
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-Java实验八" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java实验八
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/12/Java%E5%AE%9E%E9%AA%8C%E5%85%AB/" class="article-date">
+  <time datetime="2020-03-12T14:41:04.000Z" itemprop="datePublished">2020-03-12</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>《Java程序设计》课程第八周实验题目和代码。</p>
+<span id="more"></span>
+
+<h3 id="实验内容：Swing常用组件和布局和事件处理"><a href="#实验内容：Swing常用组件和布局和事件处理" class="headerlink" title="实验内容：Swing常用组件和布局和事件处理"></a>实验内容：Swing常用组件和布局和事件处理</h3><h4 id="1、-设计一个基于-Swing-的菜单条，用于实现文件、编辑、视图和帮助操作。"><a href="#1、-设计一个基于-Swing-的菜单条，用于实现文件、编辑、视图和帮助操作。" class="headerlink" title="1、 设计一个基于 Swing 的菜单条，用于实现文件、编辑、视图和帮助操作。"></a>1、 设计一个基于 Swing 的菜单条，用于实现文件、编辑、视图和帮助操作。</h4><ol>
+<li>本实验要求设计上图的窗口、菜单条、菜单和菜单项（包括子菜单）。  </li>
+<li>在创建菜单项时，不考虑使用图标，但是考虑水平分割线。  </li>
+<li>编辑、视图和帮助三个菜单，不需要创建菜单项。  </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设计一个基于 Swing 的菜单条，用于实现文件、编辑、视图和帮助操作。</span></span><br><span class="line"><span class="comment">//1) 本实验要求设计上图的窗口、菜单条、菜单和菜单项（包括子菜单）。</span></span><br><span class="line"><span class="comment">//2) 在创建菜单项时，不考虑使用图标，但是考虑水平分割线。</span></span><br><span class="line"><span class="comment">//3) 编辑、视图和帮助三个菜单，不需要创建菜单项。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.event.InputEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.KeyEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.Dimension;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JCheckBox;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JMenu;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JMenuBar;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JMenuItem;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JRadioButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.KeyStroke;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestOne</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        Menu menu = <span class="keyword">new</span> Menu(<span class="string">&quot;典型的菜单界面&quot;</span>);</span><br><span class="line">        menu.setBounds(<span class="number">100</span>, <span class="number">100</span>, <span class="number">500</span>, <span class="number">300</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Menu</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span>&#123;</span><br><span class="line">    JMenuBar menubar;   <span class="comment">//菜单条</span></span><br><span class="line">    JMenu menuFile; <span class="comment">//菜单文件</span></span><br><span class="line">    JMenu menuEdit; <span class="comment">//菜单编辑</span></span><br><span class="line">    JMenu menuView; <span class="comment">//菜单视图</span></span><br><span class="line">    JMenu menuHelp; <span class="comment">//菜单帮助</span></span><br><span class="line">    JMenuItem itemNew, itemOpen,itemClose,itemSave,itemSaveAs,itemExit;   <span class="comment">//菜单项</span></span><br><span class="line">    JMenu subType;  <span class="comment">//子菜单文件类型</span></span><br><span class="line">    JMenuItem jm1,jm2,jm3,jm4;  <span class="comment">//子菜单菜单项</span></span><br><span class="line">    JCheckBox checkBox1,checkBox2;  <span class="comment">//复选框</span></span><br><span class="line">    JRadioButton radio1,radio2;     <span class="comment">//可选按钮</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Menu</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Menu</span><span class="params">(String string)</span> </span>&#123;</span><br><span class="line">        init(string);</span><br><span class="line">        setVisible(<span class="keyword">true</span>);</span><br><span class="line">        setDefaultCloseOperation(DISPOSE_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        setTitle(s);</span><br><span class="line">        <span class="comment">//变量赋初值</span></span><br><span class="line">        menubar = <span class="keyword">new</span> JMenuBar();</span><br><span class="line">        menuFile = <span class="keyword">new</span> JMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">        menuEdit = <span class="keyword">new</span> JMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">        menuView = <span class="keyword">new</span> JMenu(<span class="string">&quot;视图&quot;</span>);</span><br><span class="line">        menuHelp = <span class="keyword">new</span> JMenu(<span class="string">&quot;帮助&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        itemNew = <span class="keyword">new</span> JMenuItem(<span class="string">&quot;新建文件&quot;</span>);</span><br><span class="line">        itemOpen = <span class="keyword">new</span> JMenuItem(<span class="string">&quot;打开文件&quot;</span>);</span><br><span class="line">        itemClose = <span class="keyword">new</span> JMenuItem(<span class="string">&quot;关闭文件&quot;</span>);</span><br><span class="line">        subType = <span class="keyword">new</span> JMenu(<span class="string">&quot;文件格式&quot;</span>);</span><br><span class="line">        itemSave = <span class="keyword">new</span> JMenuItem(<span class="string">&quot;保存文件&quot;</span>);</span><br><span class="line">        itemSaveAs = <span class="keyword">new</span> JMenuItem(<span class="string">&quot;文件另存为&quot;</span>);</span><br><span class="line">        itemExit = <span class="keyword">new</span> JMenuItem(<span class="string">&quot;退出&quot;</span>);</span><br><span class="line">        jm1=<span class="keyword">new</span> JMenuItem(<span class="string">&quot;Java文件&quot;</span>);</span><br><span class="line">        jm2=<span class="keyword">new</span> JMenuItem(<span class="string">&quot;Txt文件&quot;</span>);</span><br><span class="line">        jm3=<span class="keyword">new</span> JMenuItem(<span class="string">&quot;只读&quot;</span>);</span><br><span class="line">        jm4=<span class="keyword">new</span> JMenuItem(<span class="string">&quot;只写&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        checkBox1 = <span class="keyword">new</span> JCheckBox(<span class="string">&quot;Java文件&quot;</span>);</span><br><span class="line">        checkBox2 = <span class="keyword">new</span> JCheckBox(<span class="string">&quot;Txt文件&quot;</span>);</span><br><span class="line">        radio1 = <span class="keyword">new</span> JRadioButton(<span class="string">&quot;只读&quot;</span>);</span><br><span class="line">        radio2 = <span class="keyword">new</span> JRadioButton(<span class="string">&quot;只写&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        checkBox1.setSelected(<span class="keyword">true</span>);  <span class="comment">//复选框checkBox1默认选中</span></span><br><span class="line">        radio1.setSelected(<span class="keyword">true</span>);     <span class="comment">//可选按钮 radio1默认选中</span></span><br><span class="line">        jm1.setPreferredSize(<span class="keyword">new</span> Dimension(<span class="number">110</span>,<span class="number">30</span>));   <span class="comment">//子菜单jm1菜单项设置大小</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置菜单项的键盘操作方式是Ctrl+O和Ctrl+S键</span></span><br><span class="line">        KeyStroke Ctrl_cutKey = </span><br><span class="line">                KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK);</span><br><span class="line">        itemNew.setAccelerator(Ctrl_cutKey);</span><br><span class="line">        Ctrl_cutKey = </span><br><span class="line">                KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK);</span><br><span class="line">        itemOpen.setAccelerator(Ctrl_cutKey);</span><br><span class="line">        Ctrl_cutKey = </span><br><span class="line">                KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.CTRL_MASK);</span><br><span class="line">        itemClose.setAccelerator(Ctrl_cutKey);</span><br><span class="line">        Ctrl_cutKey = </span><br><span class="line">                KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK);</span><br><span class="line">        itemSave.setAccelerator(Ctrl_cutKey);</span><br><span class="line">        Ctrl_cutKey = </span><br><span class="line">                KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_MASK);</span><br><span class="line">        itemExit.setAccelerator(Ctrl_cutKey);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//将复选框，可选按钮添加到子菜单菜单项</span></span><br><span class="line">        jm1.add(checkBox1);</span><br><span class="line">        jm2.add(checkBox2);</span><br><span class="line">        jm3.add(radio1);</span><br><span class="line">        jm4.add(radio2);</span><br><span class="line">        <span class="comment">//将菜单项添加到子菜单</span></span><br><span class="line">        subType.add(jm1);</span><br><span class="line">        subType.add(jm2);</span><br><span class="line">        subType.addSeparator();</span><br><span class="line">        subType.add(jm3);</span><br><span class="line">        subType.add(jm4);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加菜单项到文件菜单</span></span><br><span class="line">        menuFile.add(itemNew);</span><br><span class="line">        menuFile.addSeparator();</span><br><span class="line">        menuFile.add(itemOpen);</span><br><span class="line">        menuFile.addSeparator();</span><br><span class="line">        menuFile.add(itemClose);</span><br><span class="line">        menuFile.addSeparator();</span><br><span class="line">        menuFile.add(subType);</span><br><span class="line">        menuFile.addSeparator();</span><br><span class="line">        menuFile.add(itemSave);</span><br><span class="line">        menuFile.addSeparator();</span><br><span class="line">        menuFile.add(itemSaveAs);</span><br><span class="line">        menuFile.addSeparator();</span><br><span class="line">        menuFile.add(itemExit);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//将菜单添加到菜单条上</span></span><br><span class="line">        menubar.add(menuFile); </span><br><span class="line">        menubar.add(menuEdit); </span><br><span class="line">        menubar.add(menuView); </span><br><span class="line">        menubar.add(menuHelp); </span><br><span class="line">        </span><br><span class="line">        <span class="comment">//将菜单条添加到菜单</span></span><br><span class="line">        setJMenuBar(menubar);</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CheckboxMenuItem</span> <span class="keyword">extends</span> <span class="title">JMenuItem</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">CheckboxMenuItem</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="2、-设计一个基于-Swing-的简单计算器，用于整数的加减乘除运算。"><a href="#2、-设计一个基于-Swing-的简单计算器，用于整数的加减乘除运算。" class="headerlink" title="2、 设计一个基于 Swing 的简单计算器，用于整数的加减乘除运算。"></a>2、 设计一个基于 Swing 的简单计算器，用于整数的加减乘除运算。</h4><ol>
+<li>上方为文本框，位于所属容器的顶端,下方为数字按钮和运算符按钮，放置在一个 JPanel 中间容器中。  </li>
+<li>采用边界布局与网格布局相结合的方式，完成计算器的组件布局。  </li>
+<li>按钮 C 用来对文本框中的内容清零。  </li>
+<li>在文本框中输入两个数据，按加/减/乘/除按钮进行两个数的相应运算，并将结果输出到文本框中。  </li>
+<li>在处理事件过程中，需考虑对于运算过程中异常处理，如除法分母不为0，提供的运算字符串无法运算等情况。  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//设计一个基于 Swing 的简单计算器，用于整数的加减乘除运算。</span></span><br><span class="line"><span class="comment">//1) 上方为文本框，位于所属容器的顶端,下方为数字按钮和运算符按钮，放置在一个 JPanel 中间容器中。</span></span><br><span class="line"><span class="comment">//2) 采用边界布局与网格布局相结合的方式，完成计算器的组件布局</span></span><br><span class="line"><span class="comment">//3) 按钮 C 用来对文本框中的内容清零。</span></span><br><span class="line"><span class="comment">//4) 在文本框中输入两个数据，按加/减/乘/除按钮进行两个数的相应运算，并将结果输出到文本框中。</span></span><br><span class="line"><span class="comment">//5) 在处理事件过程中，需考虑对于运算过程中异常处理，如除法分母不为 0，提供的运算字符串无法运算等情况。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.*;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestTwo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String res=<span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">	Calculator cal = <span class="keyword">new</span> Calculator(<span class="string">&quot;Calculator&quot;</span>);</span><br><span class="line">	cal.setBounds(<span class="number">400</span>,<span class="number">150</span>,<span class="number">600</span>,<span class="number">400</span>);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> JTextField result;<span class="comment">//显示输入结果的文本框</span></span><br><span class="line">    JPanel operator; <span class="comment">//使用GRID布局的容器</span></span><br><span class="line">    GridLayout grid;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Calculator</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Calculator</span><span class="params">(String string)</span> </span>&#123;</span><br><span class="line">        init(string);</span><br><span class="line">        setVisible(<span class="keyword">true</span>);</span><br><span class="line">        setDefaultCloseOperation(DISPOSE_ON_CLOSE);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        setTitle(s);</span><br><span class="line">        <span class="comment">//设置文本框</span></span><br><span class="line">        result = <span class="keyword">new</span> JTextField(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        add(result,BorderLayout.NORTH);</span><br><span class="line">        result.setPreferredSize(<span class="keyword">new</span> Dimension(<span class="number">580</span>,<span class="number">50</span>));</span><br><span class="line">        result.setFont(<span class="keyword">new</span> Font(<span class="string">&quot;DialogInput&quot;</span>,Font.BOLD,<span class="number">18</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//设置容器为GRID布局</span></span><br><span class="line">        operator = <span class="keyword">new</span> JPanel();</span><br><span class="line">        grid=<span class="keyword">new</span> GridLayout(<span class="number">4</span>,<span class="number">4</span>); </span><br><span class="line">        operator.setLayout(grid);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//operator中有4排4列16个按钮</span></span><br><span class="line">        String str[] = &#123;<span class="string">&quot;0&quot;</span>,<span class="string">&quot;1&quot;</span>,<span class="string">&quot;2&quot;</span>,<span class="string">&quot;3&quot;</span>,<span class="string">&quot;4&quot;</span>,<span class="string">&quot;5&quot;</span>,<span class="string">&quot;6&quot;</span>,<span class="string">&quot;7&quot;</span>,<span class="string">&quot;8&quot;</span>,<span class="string">&quot;9&quot;</span>,<span class="string">&quot;+&quot;</span>,<span class="string">&quot;-&quot;</span>,<span class="string">&quot;*&quot;</span>,<span class="string">&quot;/&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;=&quot;</span>&#125;; <span class="comment">//16个按钮的标签内容</span></span><br><span class="line">        JButton btn[] = <span class="keyword">new</span> JButton[str.length];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//给0-9和+-*/注册监听</span></span><br><span class="line">        Listen ls[]= <span class="keyword">new</span> Listen[str.length] ;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">15</span>;i++) &#123;</span><br><span class="line">        	ls[i] = <span class="keyword">new</span> Listen();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;str.length;i++) &#123;</span><br><span class="line">              btn[i]=<span class="keyword">new</span> JButton(str[i]);</span><br><span class="line">              btn[i].setFont(<span class="keyword">new</span> Font(<span class="string">&quot;DialogInput&quot;</span>,Font.BOLD,<span class="number">18</span>));</span><br><span class="line">              <span class="keyword">if</span>(i!=<span class="number">14</span>&amp;&amp;i!=<span class="number">15</span>) &#123;</span><br><span class="line">            	  btn[i].addActionListener(ls[i]);</span><br><span class="line">          	&#125;</span><br><span class="line">              operator.add(btn[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//给C归零按钮注册监听</span></span><br><span class="line">        CListen cl = <span class="keyword">new</span> CListen();</span><br><span class="line">        btn[<span class="number">14</span>].addActionListener(cl);</span><br><span class="line">        <span class="comment">//给=计算按钮注册监听</span></span><br><span class="line">        CalListen calisten = <span class="keyword">new</span> CalListen();</span><br><span class="line">        btn[<span class="number">15</span>].addActionListener(calisten);</span><br><span class="line">        </span><br><span class="line">        add(operator,BorderLayout.CENTER);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//0-9和+-*/的监听：将按钮的标签值添加到string res</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Listen</span> <span class="keyword">implements</span> <span class="title">ActionListener</span> </span>&#123; </span><br><span class="line">	   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">	      String str = e.getActionCommand();   <span class="comment">//获取封装在事件中的“命令”字符串</span></span><br><span class="line">	      TestTwo.res = TestTwo.res +str;</span><br><span class="line">	      Calculator.result.setText(TestTwo.res);</span><br><span class="line">	      System.out.println(TestTwo.res);</span><br><span class="line">	   &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//C清零的监听：点击将string res赋空值</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CListen</span> <span class="keyword">implements</span> <span class="title">ActionListener</span> </span>&#123; </span><br><span class="line">	   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">		   TestTwo.res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">		   Calculator.result.setText(TestTwo.res);</span><br><span class="line">	   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//=计算监听：点击计算两个数据的运算结果</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CalListen</span> <span class="keyword">implements</span> <span class="title">ActionListener</span> </span>&#123; </span><br><span class="line">	   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">		   String s,reg,sa,sb,sc;</span><br><span class="line">		   <span class="keyword">char</span> []ss;</span><br><span class="line">		   <span class="keyword">char</span> cal;</span><br><span class="line">		   <span class="keyword">double</span> a,b,c;</span><br><span class="line">		   </span><br><span class="line">		   <span class="comment">//赋初值</span></span><br><span class="line">		   <span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">		   cal=<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">		   c=<span class="number">0</span>;</span><br><span class="line">		   s=TestTwo.res;</span><br><span class="line">		   <span class="comment">//判断输入的 string s是否是进行两个数据运算的正则表达式：运算符为+-*时，两个数据可以为0；运算符为/时，后面的数据不能为0</span></span><br><span class="line">		   reg=<span class="string">&quot;(^([1-9][0-9]&#123;0,&#125;||0)(\\+||\\-||\\*)([1-9][0-9]&#123;0,&#125;||0)$)||&quot;</span> + </span><br><span class="line">		   <span class="string">&quot;(^([1-9][0-9]&#123;0,&#125;||0)\\/[1-9][0-9]&#123;0,&#125;$)&quot;</span>;</span><br><span class="line">		   Pattern p=Pattern.compile(reg);</span><br><span class="line">		   Matcher m=p.matcher(s);</span><br><span class="line">		   <span class="comment">//对string s的匹配结果进行判断，如果成功，则进行计算，否则提示错误</span></span><br><span class="line">		   <span class="keyword">if</span>(m.matches()) &#123;</span><br><span class="line">			   <span class="comment">//找到+-*/的位置</span></span><br><span class="line">			   ss=s.toCharArray();</span><br><span class="line">			   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++) &#123;</span><br><span class="line"><span class="comment">//				   System.out.println(ss[i]);</span></span><br><span class="line">				   <span class="keyword">if</span>(ss[i]==<span class="string">&#x27;+&#x27;</span>||ss[i]==<span class="string">&#x27;-&#x27;</span>||ss[i]==<span class="string">&#x27;*&#x27;</span>||ss[i]==<span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">					   index=i;</span><br><span class="line">					   cal=ss[i];</span><br><span class="line">				   &#125;</span><br><span class="line">				   </span><br><span class="line">			   &#125;</span><br><span class="line">			   </span><br><span class="line">			   <span class="comment">//将运算符前后的内容转换为double型数据</span></span><br><span class="line">			   sa=s.substring(<span class="number">0</span>,index);</span><br><span class="line">			   sb=s.substring(index+<span class="number">1</span>, s.length());</span><br><span class="line"><span class="comment">//			   System.out.println(sa);</span></span><br><span class="line"><span class="comment">//			   System.out.println(sb);</span></span><br><span class="line">			   a=Double.parseDouble(sa);</span><br><span class="line">			   b=Double.parseDouble(sb);</span><br><span class="line">			   </span><br><span class="line">			   <span class="comment">//进行计算得到c</span></span><br><span class="line">			   <span class="keyword">if</span>(cal==<span class="string">&#x27;+&#x27;</span>) &#123;</span><br><span class="line">				   c=a+b;</span><br><span class="line">			   &#125;</span><br><span class="line">			   <span class="keyword">if</span>(cal==<span class="string">&#x27;-&#x27;</span>) &#123;</span><br><span class="line">				   c=a-b;</span><br><span class="line">			   &#125;</span><br><span class="line">			   <span class="keyword">if</span>(cal==<span class="string">&#x27;*&#x27;</span>) &#123;</span><br><span class="line">				   c=a*b;</span><br><span class="line">			   &#125;</span><br><span class="line">			   <span class="keyword">if</span>(cal==<span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">				   c=a/b;</span><br><span class="line">			   &#125;</span><br><span class="line">			   sc=String.valueOf(c);</span><br><span class="line">			   Calculator.result.setText(sc);</span><br><span class="line">			   TestTwo.res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">			   </span><br><span class="line">		</span><br><span class="line">			&#125;</span><br><span class="line">		   <span class="keyword">else</span> &#123;</span><br><span class="line">			   TestTwo.res = <span class="string">&quot;&quot;</span>;</span><br><span class="line">			   Calculator.result.setText(TestTwo.res);</span><br><span class="line">			   JOptionPane.showMessageDialog(<span class="keyword">null</span>, <span class="string">&quot;输入错误，请进行两个数据的运算！&quot;</span> );</span><br><span class="line">		   &#125;</span><br><span class="line">		   </span><br><span class="line">		   </span><br><span class="line">	   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          打赏
+        </div>
+        
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/12/Java%E5%AE%9E%E9%AA%8C%E5%85%AB/" data-id="cksn05fay0005ddnq7ygnbsxi"
+        class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" rel="tag">Java课程实验</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/04/16/JavaEE%E5%AE%9E%E9%AA%8C%E4%BA%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            JavaEE实验二
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/03/10/Java%E5%AE%9E%E9%AA%8C%E4%B8%83/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java实验七</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'ii72g4FswY4weGoRf3f3Y7Od-gzGzoHsz',
+        app_key: 'tESihNbvbqmjF5kFmAV9QkaK',
+        path: window.location.pathname,
+        avatar: 'robohash',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2021
+        Aoxue
+      </li>
+      <li>
+        
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a> by shenyu
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <ul class="list-inline">
+  <li>PV:<span id="busuanzi_value_page_pv"></span></li>
+  <li>UV:<span id="busuanzi_value_site_uv"></span></li>
+</ul>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aoxue-blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+  <link rel="stylesheet" href="APlayer.min.css">
+<div id="aplayer"></div>
+<script src="APlayer.min.js"></script>
+
+</html>

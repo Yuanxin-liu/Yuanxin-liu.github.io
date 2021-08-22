@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="思考,代码,博客" />
+   
+  <meta name="description" content="record some ideas" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Java实验三 |  Aoxue-blog
+  </title>
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+</html>
+<body>
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-Java实验三" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java实验三
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E4%B8%89/" class="article-date">
+  <time datetime="2019-12-30T02:06:50.000Z" itemprop="datePublished">2019-12-30</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>《Java程序设计》课程第三周实验题目和代码。</p>
+<span id="more"></span>
+
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>输出 101-200 之内的所有质数； </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//输出 101-200 之内的所有质数； </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrimeNumber</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []arg)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;101-200的质数是：&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> i,j;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//输出1-200之间的所有质数</span></span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">101</span>;i&lt;=<span class="number">200</span>;i++) &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">boolean</span> flag=<span class="keyword">false</span>;</span><br><span class="line">			<span class="comment">//判断是否为质数，如果是，flag为true，否则为false</span></span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">2</span>;j&lt;=Math.sqrt(i);j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(i%j==<span class="number">0</span>) &#123;</span><br><span class="line">					flag=<span class="keyword">false</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					flag=<span class="keyword">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(flag)</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p> 编写一个 Java 应用程序，具体内容如下：<br>首先，该程序中有 3 个类：Triangle、Circle 和 Cone，分别用来刻画“三<br>角形”、“圆形”和“圆锥体”。<br>（1) Triangle 类具有类型为 double 的三个边长度以及周长属性；定义构<br>造方法、返回周长方法和修改三个边的方法。另外，Triangle 类还具有一个<br>boolean 型的属性，该属性用来判断三条边能否构成一个三角形，请实现判断是<br>否为三角形的方法。<br>（2）Circle 类具有类型为 double 的属性半径和面积；定义设置半径，返<br>回面积的方法。<br>（3）Cone 类具有 Circle 类型的底，double 类型的高这两个属性，定义构<br>造方法，计算圆锥体体积的方法。<br>然后，在一个新的 public 类中创建并使用三个类的对象：<br>（1）Triangle 类：创建对象，并使用构造方法进行初始化。计算出周长值<br>并输出 ；修改三边值并判断是否构成三角形。<br>（2）Circle 类：创建对象并初始化，然后计算面积并输出。<br>（3）Cone 类：创建对象并初始化，修改 Cone 底的半径，计算体积并输出。<br>（4）要求：所有测试的三角形边、圆半径和圆椎体的高，从控制台输入。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 编写一个 Java 应用程序，具体内容如下： </span></span><br><span class="line"><span class="comment">//首先，该程序中有 3 个类：Triangle、Circle 和 Cone，分别用来刻画“三</span></span><br><span class="line"><span class="comment">//角形”、“圆形”和“圆锥体”。 </span></span><br><span class="line"><span class="comment">//（1) Triangle 类具有类型为 double 的三个边长度以及周长属性；定义构</span></span><br><span class="line"><span class="comment">//造方法、返回周长方法和修改三个边的方法。另外，Triangle 类还具有一个</span></span><br><span class="line"><span class="comment">//boolean 型的属性，该属性用来判断三条边能否构成一个三角形，请实现判断是</span></span><br><span class="line"><span class="comment">//否为三角形的方法。 </span></span><br><span class="line"><span class="comment">//（2）Circle 类具有类型为 double 的属性半径和面积；定义设置半径，返</span></span><br><span class="line"><span class="comment">//回面积的方法。  </span></span><br><span class="line"><span class="comment">//（3）Cone 类具有 Circle 类型的底，double 类型的高这两个属性，定义构</span></span><br><span class="line"><span class="comment">//造方法，计算圆锥体体积的方法。  </span></span><br><span class="line"><span class="comment">//然后，在一个新的 public 类中创建并使用三个类的对象： </span></span><br><span class="line"><span class="comment">//（1）Triangle 类：创建对象，并使用构造方法进行初始化。计算出周长值</span></span><br><span class="line"><span class="comment">//并输出 ；修改三边值并判断是否构成三角形。 </span></span><br><span class="line"><span class="comment">//（2）Circle 类：创建对象并初始化，然后计算面积并输出。 </span></span><br><span class="line"><span class="comment">//（3）Cone 类：创建对象并初始化，修改 Cone 底的半径，计算体积并输出。 </span></span><br><span class="line"><span class="comment">//（4）要求：所有测试的三角形边、圆半径和圆椎体的高，从控制台输入。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Triangle</span></span>&#123;</span><br><span class="line">   <span class="keyword">double</span> a,b,c,perimeter;      <span class="comment">//triangle&#x27;s sides length a,b,c and perimeter</span></span><br><span class="line">   Triangle(<span class="keyword">double</span> a,<span class="keyword">double</span> b,<span class="keyword">double</span> c)&#123;  <span class="comment">//constructor</span></span><br><span class="line">	   <span class="keyword">this</span>.a=a;</span><br><span class="line">	   <span class="keyword">this</span>.b=b;</span><br><span class="line">	   <span class="keyword">this</span>.c=c;</span><br><span class="line">	   perimeter=a+b+c;</span><br><span class="line">	   System.out.println(<span class="string">&quot;the perimeter is: &quot;</span>+perimeter);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">boolean</span> <span class="title">isTriangle</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">double</span> b,<span class="keyword">double</span> c)</span> </span>&#123;  <span class="comment">//determine whether form triangle</span></span><br><span class="line">	   <span class="keyword">if</span>(a&gt;=(b+c)||b&gt;=(a+c)||c&gt;=(a+b)) &#123;</span><br><span class="line">		   System.out.println(<span class="string">&quot;the length of sides &quot;</span>+a +<span class="string">&quot;,&quot;</span> + b +<span class="string">&quot;,&quot;</span> +c+<span class="string">&quot; can not form the triangle.&quot;</span>);</span><br><span class="line">		   <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	   &#125;</span><br><span class="line">	   <span class="keyword">else</span> &#123;</span><br><span class="line">		   System.out.println(<span class="string">&quot;the length of sides &quot;</span>+a +<span class="string">&quot;,&quot;</span> + b +<span class="string">&quot;,&quot;</span> +c+<span class="string">&quot; can form the triangle.&quot;</span>);</span><br><span class="line">		   <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	   &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">setSideLength</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">double</span> b,<span class="keyword">double</span> c)</span> </span>&#123;       <span class="comment">//reset sides length of triangle</span></span><br><span class="line">	   <span class="keyword">this</span>.a=a;</span><br><span class="line">	   <span class="keyword">this</span>.b=b;</span><br><span class="line">	   <span class="keyword">this</span>.c=c;</span><br><span class="line">	   <span class="keyword">boolean</span> flag;</span><br><span class="line">	   flag=isTriangle(a,b,c);</span><br><span class="line">	   </span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//create Circle class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> radius;     <span class="comment">//Circle&#x27;s radius</span></span><br><span class="line">	</span><br><span class="line">	Circle(<span class="keyword">double</span> radius)&#123;    <span class="comment">//constructor</span></span><br><span class="line">		<span class="keyword">this</span>.radius=radius;</span><br><span class="line">		System.out.println(<span class="string">&quot;the radius is:&quot;</span>+<span class="keyword">this</span>.radius);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">calArea</span><span class="params">()</span> </span>&#123;      <span class="comment">//calculate area of circle</span></span><br><span class="line">		System.out.println(<span class="string">&quot;the area is:&quot;</span>+<span class="number">3.14</span>*radius*radius);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">3.14</span>*radius*radius;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setRadius</span><span class="params">(<span class="keyword">double</span> radius)</span> </span>&#123;    <span class="comment">//reset radius</span></span><br><span class="line">		<span class="keyword">this</span>.radius=radius;</span><br><span class="line">		System.out.println(<span class="string">&quot;the radius is set to &quot;</span>+<span class="keyword">this</span>.radius);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//create Cone class extends Circle class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cone</span> <span class="keyword">extends</span> <span class="title">Circle</span></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> height,volume;      <span class="comment">//cone&#x27;s height,volume</span></span><br><span class="line">	</span><br><span class="line">	Cone(<span class="keyword">double</span> radius,<span class="keyword">double</span> height)&#123;  <span class="comment">//constructor</span></span><br><span class="line">		<span class="keyword">super</span>(radius);</span><br><span class="line">		<span class="keyword">this</span>.height=height;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">calVolume</span><span class="params">()</span> </span>&#123;       <span class="comment">//calculate volume of Cone</span></span><br><span class="line">		<span class="keyword">double</span> volume,area;</span><br><span class="line">		area=<span class="keyword">super</span>.calArea();</span><br><span class="line">		volume=area*height*(<span class="number">1.0</span>/<span class="number">3.0</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;the volume of Cone is:&quot;</span>+volume);</span><br><span class="line">		<span class="keyword">return</span> volume;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setBottomRadius</span><span class="params">(<span class="keyword">double</span> r)</span> </span>&#123;  <span class="comment">//reset radius</span></span><br><span class="line">		<span class="keyword">super</span>.setRadius(r);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//test class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inherit</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []arg)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> k=-<span class="number">1</span>;    <span class="comment">//receive data from console to choose operation</span></span><br><span class="line">		<span class="keyword">boolean</span> xunhuan=<span class="keyword">true</span>;   <span class="comment">//control when loop ends</span></span><br><span class="line">		<span class="keyword">for</span>(;xunhuan;) &#123;</span><br><span class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.println(<span class="string">&quot;请输入1-3进行选择&quot;</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;1.创建Triangle类&quot;</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;2.创建Circle类&quot;</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;3.创建Cone类&quot;</span>);</span><br><span class="line">		k=scan.nextInt();</span><br><span class="line">		<span class="keyword">switch</span>(k) &#123;</span><br><span class="line">		<span class="comment">//create triangle class</span></span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:   </span><br><span class="line">			System.out.println(<span class="string">&quot;请输入三角形的边长：&quot;</span>);</span><br><span class="line">			<span class="keyword">double</span> a,b,c;      <span class="comment">//receive data of sides length of triangle from console </span></span><br><span class="line">			Scanner st = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">			a=st.nextDouble();</span><br><span class="line">			b=st.nextDouble();</span><br><span class="line">			c=st.nextDouble();</span><br><span class="line">			</span><br><span class="line">			Triangle t =<span class="keyword">new</span> Triangle(a,b,c);  <span class="comment">//create triangle class t</span></span><br><span class="line">			t.isTriangle(a, b, c);             <span class="comment">//determine whether form the triangle</span></span><br><span class="line">			</span><br><span class="line">			System.out.println(<span class="string">&quot;是否修改三角形的边长，是输入1，否输入2&quot;</span>);     <span class="comment">//whether reset sides length</span></span><br><span class="line">			<span class="keyword">int</span> shuru=<span class="number">0</span>;</span><br><span class="line">			Scanner st1 = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">			shuru=st1.nextInt();</span><br><span class="line">			<span class="keyword">if</span>(shuru==<span class="number">1</span>) &#123;</span><br><span class="line">				System.out.println(<span class="string">&quot;请输入要修改的三角形的边长：&quot;</span>);</span><br><span class="line">				<span class="keyword">double</span> a1,b1,c1;</span><br><span class="line">				Scanner st2 = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">				a1=st2.nextDouble();</span><br><span class="line">				b1=st2.nextDouble();</span><br><span class="line">				c1=st2.nextDouble();</span><br><span class="line">				t.setSideLength(a1,b1,c1);</span><br><span class="line">			&#125;</span><br><span class="line">                <span class="comment">//end or continue</span></span><br><span class="line">				System.out.println(<span class="string">&quot;是否退出？退出请按1,继续请按2&quot;</span>);</span><br><span class="line">				Scanner s1 = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">				<span class="keyword">int</span> shu1=<span class="number">0</span>;</span><br><span class="line">				shu1=s1.nextInt();</span><br><span class="line">				<span class="keyword">if</span>(shu1==<span class="number">1</span>)</span><br><span class="line">					xunhuan=<span class="keyword">false</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			<span class="comment">//create circle class</span></span><br><span class="line">			System.out.println(<span class="string">&quot;请输入圆的半径：&quot;</span>);</span><br><span class="line">			<span class="keyword">double</span> r;  <span class="comment">//receive data of circle&#x27;s radius from console</span></span><br><span class="line">			Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">			r=sc.nextDouble();</span><br><span class="line">			</span><br><span class="line">			Circle cir= <span class="keyword">new</span> Circle(r);  <span class="comment">//create circle class cir</span></span><br><span class="line">			<span class="keyword">double</span> area;</span><br><span class="line">			area=cir.calArea();    <span class="comment">//calculate area of circle</span></span><br><span class="line">			System.out.println(<span class="string">&quot;圆的面积是：&quot;</span>+area);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//end or continue</span></span><br><span class="line">			System.out.println(<span class="string">&quot;是否退出？退出请按1,继续请按2&quot;</span>);</span><br><span class="line">			<span class="keyword">int</span> shu2=<span class="number">0</span>;</span><br><span class="line">			shu2=sc.nextInt();</span><br><span class="line">			<span class="keyword">if</span>(shu2==<span class="number">1</span>)</span><br><span class="line">				xunhuan=<span class="keyword">false</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			<span class="comment">//create cone class</span></span><br><span class="line">			System.out.println(<span class="string">&quot;请输入圆锥的半径和高：&quot;</span>);</span><br><span class="line">			<span class="keyword">double</span> ra,h;  <span class="comment">//receive data of cone&#x27;s radius,height from console</span></span><br><span class="line">			Scanner sco = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">			ra=sco.nextDouble();</span><br><span class="line">			h=sco.nextDouble();</span><br><span class="line">			</span><br><span class="line">			Cone cone=<span class="keyword">new</span> Cone(ra,h);   <span class="comment">//create Cone class cone</span></span><br><span class="line">			cone.calVolume();          <span class="comment">//calculate volume</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment">//reset radius</span></span><br><span class="line">			System.out.println(<span class="string">&quot;是否修改圆锥底的半径，是输入1，否输入2&quot;</span>);</span><br><span class="line">			<span class="keyword">int</span> shur=<span class="number">0</span>;</span><br><span class="line">			shur=sco.nextInt();</span><br><span class="line">			<span class="keyword">if</span>(shur==<span class="number">1</span>) &#123;</span><br><span class="line">				System.out.println(<span class="string">&quot;请输入要修改圆锥底的半径：&quot;</span>);</span><br><span class="line">				<span class="keyword">double</span> ra1;</span><br><span class="line">				ra1=sco.nextDouble();</span><br><span class="line">				cone.setBottomRadius(ra1);</span><br><span class="line">				cone.calVolume();</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//end or continue</span></span><br><span class="line">				System.out.println(<span class="string">&quot;是否退出？退出请按1,继续请按2&quot;</span>);</span><br><span class="line">				Scanner st3 = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">				<span class="keyword">int</span> shu3=<span class="number">0</span>;</span><br><span class="line">				shu3=st3.nextInt();</span><br><span class="line">				<span class="keyword">if</span>(shu3==<span class="number">1</span>)</span><br><span class="line">					xunhuan=<span class="keyword">false</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>给定一组输入数据（从键盘输入），通过一种排序算法（如插入排序、选择<br>排序、归并排序、冒泡排序、快速排序、堆排序等一种）排序后输出；再从<br>键盘输入一个数据，通过二分查找算法，检索该数据是否在排序的数据中，<br>若在请输出其索引号；若不存在，请给出提示。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//给定一组输入数据（从键盘输入），通过一种排序算法（如插入排序、选择</span></span><br><span class="line"><span class="comment">//排序、归并排序、冒泡排序、快速排序、堆排序等一种）排序后输出；再从</span></span><br><span class="line"><span class="comment">//键盘输入一个数据，通过二分查找算法，检索该数据是否在排序的数据中，</span></span><br><span class="line"><span class="comment">//若在请输出其索引号；若不存在，请给出提示。 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sort</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []arg)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	</span><br><span class="line">	System.out.println(<span class="string">&quot;请输入想要排序的数据，数字之间用空格分离，回车结束输入：&quot;</span>);</span><br><span class="line">	Scanner sc=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	String temp=sc.nextLine();          <span class="comment">//input end with enter key</span></span><br><span class="line">	String arr[]=temp.split(<span class="string">&quot; &quot;</span>);       <span class="comment">//separate character by regular expression into array arr</span></span><br><span class="line">	<span class="keyword">int</span> len=arr.length;                 <span class="comment">//arr&#x27;s length</span></span><br><span class="line">	<span class="keyword">int</span> []sort=<span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//convert character into integer</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++) &#123;</span><br><span class="line">		sort[i]=Integer.parseInt(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//sort array sort</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len-<span class="number">1</span>;i++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;len-<span class="number">1</span>-i;j++) &#123;</span><br><span class="line">			<span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(sort[j]&gt;sort[j+<span class="number">1</span>]) &#123;</span><br><span class="line">				t=sort[j];</span><br><span class="line">				sort[j]=sort[j+<span class="number">1</span>];</span><br><span class="line">				sort[j+<span class="number">1</span>]=t;</span><br><span class="line">			&#125;</span><br><span class="line">				</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//find data from console by dichotomy</span></span><br><span class="line">	System.out.println(<span class="string">&quot;排序后的数据：&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++) </span><br><span class="line">		System.out.printf(sort[i]+<span class="string">&quot;,&quot;</span>);</span><br><span class="line">	System.out.printf(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	System.out.println(<span class="string">&quot;输入想要查找的数：&quot;</span>);</span><br><span class="line">	<span class="keyword">int</span> m,a=<span class="number">0</span>,b=len;</span><br><span class="line">	<span class="keyword">boolean</span> flag=<span class="keyword">false</span>;</span><br><span class="line">	m=sc.nextInt();</span><br><span class="line">	<span class="keyword">for</span>(i=len/<span class="number">2</span>;i&lt;b&amp;&amp;i&gt;a;) &#123;</span><br><span class="line">		<span class="keyword">if</span>(sort[i]==m) &#123;</span><br><span class="line">			System.out.println(m+<span class="string">&quot;的索引为：&quot;</span>+i);</span><br><span class="line">			flag=<span class="keyword">true</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(m&gt;sort[i]) &#123;</span><br><span class="line">			a=i;</span><br><span class="line">			i=(a+b)/<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			b=i;</span><br><span class="line">			i=(a+b)/<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag==<span class="keyword">false</span>)</span><br><span class="line">		System.out.println(<span class="string">&quot;你输入的数不存在&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          打赏
+        </div>
+        
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E4%B8%89/" data-id="cksn05fb1000jddnq8mqrfca0"
+        class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" rel="tag">Java课程实验</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E4%BA%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Java实验二
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/12/30/Java%E5%AE%9E%E9%AA%8C%E5%9B%9B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java实验四</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'ii72g4FswY4weGoRf3f3Y7Od-gzGzoHsz',
+        app_key: 'tESihNbvbqmjF5kFmAV9QkaK',
+        path: window.location.pathname,
+        avatar: 'robohash',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2021
+        Aoxue
+      </li>
+      <li>
+        
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a> by shenyu
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <ul class="list-inline">
+  <li>PV:<span id="busuanzi_value_page_pv"></span></li>
+  <li>UV:<span id="busuanzi_value_site_uv"></span></li>
+</ul>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aoxue-blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+  <link rel="stylesheet" href="APlayer.min.css">
+<div id="aplayer"></div>
+<script src="APlayer.min.js"></script>
+
+</html>

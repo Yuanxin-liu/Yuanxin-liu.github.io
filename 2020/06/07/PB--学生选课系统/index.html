@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="思考,代码,博客" />
+   
+  <meta name="description" content="record some ideas" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    PB--学生选课系统 |  Aoxue-blog
+  </title>
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+</html>
+<body>
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-PB--学生选课系统" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  PB--学生选课系统
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/07/PB--%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time datetime="2020-06-07T08:36:12.000Z" itemprop="datePublished">2020-06-07</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>《数据库原理》验收项目代码。</p>
+<span id="more"></span>
+
+<h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>PowerBuilder 9.0<br>不做评价，学校要求使用的，<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1qgZFbcLK2rjX370anD3NPw">下载地址</a>，提取码：fezg</p>
+<h3 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h3><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h4><h5 id="I-创建ASA数据库，教程"><a href="#I-创建ASA数据库，教程" class="headerlink" title="I. 创建ASA数据库，教程"></a>I. 创建ASA数据库，<a target="_blank" rel="noopener" href="https://blog.csdn.net/wjf1997/article/details/92437985">教程</a></h5><p>其中”User ID”值为”dba”,”Password”值为”sql”,”Database Name”值为”student”,</p>
+<h5 id="II-创建表和数据操作"><a href="#II-创建表和数据操作" class="headerlink" title="II. 创建表和数据操作"></a>II. 创建表和数据操作</h5><p>分别创建三张表学生表S,课程表C，和学习表SC。这三个表的字段、主键和外键定义如下：<br><strong>学生表： S（sno,sname,sex,age,sdept,logn,pswd)<br>主键： sno</strong>    </p>
+<table>
+<thead>
+<tr>
+<th>Column Name</th>
+<th>Data Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sno</td>
+<td>char(4)</td>
+<td>学号</td>
+</tr>
+<tr>
+<td>sname</td>
+<td>char(8)</td>
+<td>姓名</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>char(2)</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>age</td>
+<td>char(2)</td>
+<td>年龄</td>
+</tr>
+<tr>
+<td>sdept</td>
+<td>char(10)</td>
+<td>所在系</td>
+</tr>
+<tr>
+<td>logn</td>
+<td>char(20)</td>
+<td>登录名</td>
+</tr>
+<tr>
+<td>pswd</td>
+<td>char(20)</td>
+<td>登录密码</td>
+</tr>
+</tbody></table>
+<p>数据操作结果如下：<br><img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/S.png" alt="S表字段">  </p>
+<p><strong>课程表： C（cno,cname,credit,cdept,tname)<br>主键： cno</strong>    </p>
+<table>
+<thead>
+<tr>
+<th>Column Name</th>
+<th align="center">Data Type</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cno</td>
+<td align="center">char(4)</td>
+<td align="right">课程号</td>
+</tr>
+<tr>
+<td>cname</td>
+<td align="center">char(8)</td>
+<td align="right">课程名</td>
+</tr>
+<tr>
+<td>credit</td>
+<td align="center">integer</td>
+<td align="right">学分</td>
+</tr>
+<tr>
+<td>cdept</td>
+<td align="center">char(10)</td>
+<td align="right">院系</td>
+</tr>
+<tr>
+<td>tname</td>
+<td align="center">char(8)</td>
+<td align="right">教师名</td>
+</tr>
+</tbody></table>
+<p>结果如下：<br><img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/C.png" alt="C表字段">  </p>
+<p><strong>学习表： SC（sno,cno,grade)<br>主键： （sno,cno）<br>外键： sno,cno</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>Column Name</th>
+<th align="center">Data Type</th>
+<th align="right">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sno</td>
+<td align="center">char(4)</td>
+<td align="right">学号</td>
+</tr>
+<tr>
+<td>cno</td>
+<td align="center">char(4)</td>
+<td align="right">课程号</td>
+</tr>
+<tr>
+<td>grade</td>
+<td align="center">integer</td>
+<td align="right">成绩</td>
+</tr>
+</tbody></table>
+<p>注意！grade设置为可以赋空值，否则之后插入数据会报错。结果如下：<br><img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/SC.png" alt="SC表字段"> </p>
+<h4 id="2-建立工作空间和应用对象"><a href="#2-建立工作空间和应用对象" class="headerlink" title="2.建立工作空间和应用对象"></a>2.建立工作空间和应用对象</h4><p>参见《数据库使用教程》P321-322或者<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/a17d52852766968098c8f23f.html">应用对象创建</a></p>
+<h4 id="3-建立数据窗口"><a href="#3-建立数据窗口" class="headerlink" title="3.建立数据窗口"></a>3.建立数据窗口</h4><p>参见<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/8275fc8677342446a03cf6c2.html">建立数据窗口教程</a>分别建立数据窗口(d_c, d_s), 带参数数据窗口（d_select_student_course,d_select_student, d_select_student_score, d_score_input），group格式数据窗口（d_student_score_report， d_score_dis）<br>设置如下：<br><strong>d_c</strong><br>格式： Grid<br>选择方式： Quick Select<br>表： C<br>字段： All<br>可以将cdept的edit属性设置如下，按自己喜好设置。<br><img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/d_c.png" alt="d_c"> </p>
+<p><strong>d_s</strong><br>格式： Grid<br>选择方式： Quick Select<br>表： S<br>字段： All<br>可以将sex的edit属性设置如下，按自己喜好设置。<br> <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/d_s.png" alt="d_s">  </p>
+<p><strong>d_select_student_course</strong><br>格式： Grid<br>选择方式： Sql Select<br>表： C,SC<br>字段： cno,cname,credit,cdept,tname<br>定义获取参数： snum(Name),String(Type)<br>where字句： sc.cno=:snum<br>经过增强数据窗口功能处理以后，结果如图所示：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/d_select_student_course.png" alt="d_select_student_course">  </p>
+<p><strong>d_select_student</strong><br>格式： Grid<br>选择方式： Sql Select<br>表： S<br>字段： sno,sname,age,sex,sdept<br>定义获取参数： snum(Name),String(Type)<br>where字句： s.sno=:snum<br>经过增强数据窗口功能处理以后，结果如图所示：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/d_select_student.png" alt="d_select_student">  </p>
+<p><strong>d_select_student_score</strong><br>格式： Grid<br>选择方式： Sql Select<br>表： C,SC<br>字段： cno,cname,grade<br>定义获取参数： snum(Name),String(Type)<br>where字句： sc.sno=:snum and sc.grade is not null<br>经过增强数据窗口功能处理以后，结果如图所示：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/d_select_student_score.png" alt="d_select_student_score">  </p>
+<p><strong>d_score_input</strong><br>格式： Grid<br>选择方式： Sql Select<br>表： SC<br>字段： sno,grade<br>定义获取参数： cnum(Name),String(Type)<br>where字句： sc.cno=:cnum<br>经过增强数据窗口功能处理以后，结果如图所示：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/d_score_input.png" alt="d_score_input">  </p>
+<p><strong>d_student_score_report</strong><br>格式： Group<br>选择方式： Sql Select<br>表： S,C,SC<br>字段： sno,sname,cno,cname,credit,tname,grade<br>定义获取参数： snum(Name),String(Type)<br>where字句： s.sno=:snum<br>经过增强数据窗口功能处理以后，结果如图所示：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/d_student_score_input.png" alt="d_student_score_report">  </p>
+<p><strong>d_score_dis</strong><br>格式： Group<br>选择方式： Sql Select<br>表： C,SC<br>字段： cno,cname<br>group字句： cno,cname拖到右端<br>compute字句： avg(grade)as平均成绩<br>经过增强数据窗口功能处理以后，结果如图所示：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/w_score_dis.png" alt="w_score_dis"> </p>
+<h4 id="4-建立窗口"><a href="#4-建立窗口" class="headerlink" title="4.建立窗口"></a>4.建立窗口</h4><p>建立窗口之前，先添加student的open（）时间脚本。<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> //Profile student</span><br><span class="line">SQLCA.DBMS=<span class="string">&quot;ODBC&quot;</span></span><br><span class="line">SQLCA.AutoCommit=<span class="literal">false</span></span><br><span class="line">SQLCA.DBParm=<span class="string">&quot;ConnectString=&#x27;DSN=student;UID=dba;PWD=sql&#x27;&quot;</span></span><br><span class="line">CONNECT;</span><br><span class="line"><span class="keyword">if</span> SQLCA.SQLCODE&lt;&gt;0 <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;对不起！不能连接数据库！&quot;</span>,SQLCA.SQLERRTEXT)</span><br><span class="line">	halt</span><br><span class="line">	<span class="built_in">return</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	open(w_login)</span><br><span class="line">end <span class="keyword">if</span></span><br></pre></td></tr></table></figure></p>
+<p> 分别建立窗口w_login, w_select_course, w_student_score_report, w_teacher_manage, w_student_create, w_course_create, w_course_score_dis.<br> <strong>w_login</strong><br> 窗口设计如下：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/w_login.png" alt="w_login">  </p>
+<p>   添加脚本  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">//sle_user的modified()事件脚本</span><br><span class="line"><span class="keyword">if</span> keydown(KeyEnter!) <span class="keyword">then</span></span><br><span class="line">	sle_pwd.setfocus()</span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//sle_pwd的checkkey()事件脚本</span><br><span class="line"><span class="keyword">if</span> keydown(KeyEnter!) <span class="keyword">then</span></span><br><span class="line">	pb_login.setfocus()</span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_login的clicked()事件脚本</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> sle_user.text=<span class="string">&quot;&quot;</span> <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;提醒&quot;</span>,<span class="string">&quot;请输入用户名！&quot;</span>)</span><br><span class="line">	sle_user.SetFocus()</span><br><span class="line">	<span class="built_in">return</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"><span class="keyword">if</span> sle_pwd.text=<span class="string">&quot;&quot;</span> <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;提醒&quot;</span>,<span class="string">&quot;请输入密码！&quot;</span>)</span><br><span class="line">	sle_pwd.SetFocus()</span><br><span class="line">	<span class="built_in">return</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line">string ls_user,ls_pwd,ls_confirm_user,ls_confirm_pwd</span><br><span class="line">ls_user=upper(sle_user.text)</span><br><span class="line">ls_pwd=upper(sle_pwd.text)</span><br><span class="line">ls_confirm_user=<span class="string">&quot;&quot;</span></span><br><span class="line">ls_confirm_pwd=<span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">if</span>(ls_user=<span class="string">&quot;SYSTEM&quot;</span> and ls_pwd=<span class="string">&quot;SYSTEM&quot;</span>) <span class="keyword">then</span></span><br><span class="line">    open(w_teacher_manage)</span><br><span class="line">	 close(parent)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	select <span class="string">&quot;s&quot;</span>.<span class="string">&quot;logn&quot;</span>,<span class="string">&quot;s&quot;</span>.<span class="string">&quot;pswd&quot;</span>,<span class="string">&quot;s&quot;</span>.<span class="string">&quot;sno&quot;</span> into :ls_confirm_user,:ls_confirm_pwd,:s_info from <span class="string">&quot;s&quot;</span> <span class="built_in">where</span> <span class="string">&quot;s&quot;</span>.<span class="string">&quot;logn&quot;</span>=:ls_user;</span><br><span class="line">	s_info=trim(s_info)</span><br><span class="line">	<span class="keyword">if</span> ls_user&lt;&gt;trim(ls_confirm_user) <span class="keyword">then</span></span><br><span class="line">		messagebox(<span class="string">&quot;警告&quot;</span>,<span class="string">&quot;用户名错，重新注册&quot;</span>,stopSign!)</span><br><span class="line">		sle_user.text=<span class="string">&quot;&quot;</span></span><br><span class="line">		sle_pwd.text=<span class="string">&quot;&quot;</span></span><br><span class="line">		sle_user.SetFocus()</span><br><span class="line">	elseif ls_pwd&lt;&gt;trim(ls_confirm_pwd) <span class="keyword">then</span></span><br><span class="line">		messagebox(<span class="string">&quot;警告&quot;</span>,<span class="string">&quot;口令错，重新注册&quot;</span>,stopSign!)</span><br><span class="line">		sle_pwd.text=<span class="string">&quot;&quot;</span></span><br><span class="line">		sle_user.SetFocus()</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		open(w_select_course)</span><br><span class="line">		close(parent)</span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_exit的clicked()事件脚本</span><br><span class="line">close(parent)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> <strong>w_select_course</strong><br>窗口设计如下：<br>dw_1连接表d_select_student；<br>dw_2连接表d_select_student_score；<br>dw_3连接表d_c；<br>dw_4连接表d_select_student_course；<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/w_select_course.png" alt="w_select_course">  </p>
+<p>添加脚本  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">//窗口w_select_courese的open()事件脚本</span><br><span class="line">dw_1.settransobject(sqlca)</span><br><span class="line">dw_1.retrieve(s_info)</span><br><span class="line">dw_1.object.datawindow.readonly=<span class="string">&quot;yes&quot;</span></span><br><span class="line"></span><br><span class="line">dw_2.settransobject(sqlca)</span><br><span class="line">dw_2.retrieve(s_info)</span><br><span class="line">dw_2.object.datawindow.readonly=<span class="string">&quot;yes&quot;</span></span><br><span class="line"></span><br><span class="line">dw_3.settransobject(sqlca)</span><br><span class="line">dw_3.retrieve()</span><br><span class="line">dw_3.object.datawindow.readonly=<span class="string">&quot;yes&quot;</span></span><br><span class="line"></span><br><span class="line">dw_4.settransobject(sqlca)</span><br><span class="line">dw_4.retrieve(s_info)</span><br><span class="line">dw_4.object.datawindow.readonly=<span class="string">&quot;yes&quot;</span></span><br><span class="line"></span><br><span class="line">sle_1.SetFocus()</span><br><span class="line"></span><br><span class="line">//pb_1的clicked()事件</span><br><span class="line">string ccname,ccno</span><br><span class="line">c_info=upper(sle_1.text)</span><br><span class="line"><span class="keyword">if</span> c_info=<span class="string">&quot;&quot;</span> <span class="keyword">then</span></span><br><span class="line">	MessageBox(<span class="string">&quot;错误&quot;</span>,<span class="string">&quot;请输入课程号！&quot;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	select c.cname into :ccname from c <span class="built_in">where</span> c.cno=:c_info ;</span><br><span class="line">	<span class="keyword">if</span> SQLCA.SQLCODE&lt;&gt;0 <span class="keyword">then</span></span><br><span class="line">		MessageBox(<span class="string">&quot;错误&quot;</span>,<span class="string">&quot;此课程号不存在！&quot;</span>)</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		select sc.cno into :ccno from sc <span class="built_in">where</span> (sc.cno=:c_info and sc.sno=:s_info);</span><br><span class="line">		<span class="keyword">if</span> SQLCA.SQLCODE=0 <span class="keyword">then</span></span><br><span class="line">			MessageBox(<span class="string">&quot;错误&quot;</span>,<span class="string">&quot;此课程已选！&quot;</span>)</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		    insert into sc(sno,cno) values (:s_info,:c_info);</span><br><span class="line">			dw_4.reset()</span><br><span class="line">			sle_1.text=<span class="string">&quot;&quot;</span></span><br><span class="line">			dw_4.settransobject(sqlca)</span><br><span class="line">			dw_4.retrieve(s_info)</span><br><span class="line">		end <span class="keyword">if</span></span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_2的clicked()事件</span><br><span class="line">string ccno,ggrade</span><br><span class="line"><span class="keyword">if</span> sle_1.text=<span class="string">&quot;&quot;</span> <span class="keyword">then</span></span><br><span class="line">	MessageBox(<span class="string">&quot;错误&quot;</span>,<span class="string">&quot;请输入课程号！&quot;</span>)</span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line">c_info=upper(sle_1.text)</span><br><span class="line"><span class="keyword">if</span> c_info&lt;&gt;<span class="string">&quot;&quot;</span> <span class="keyword">then</span></span><br><span class="line">	select c.cname into :cname_info from c <span class="built_in">where</span> c.cno=:c_info ;</span><br><span class="line">   <span class="keyword">if</span> SQLCA.SQLCODE&lt;&gt;0 <span class="keyword">then</span></span><br><span class="line">		MessageBox(<span class="string">&quot;错误&quot;</span>,<span class="string">&quot;此课程号不存在！&quot;</span>)</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		select sc.cno,sc.grade into :ccno,:ggrade from sc <span class="built_in">where</span> (sc.cno=:c_info and sc.sno=:s_info);</span><br><span class="line">		<span class="keyword">if</span> SQLCA.SQLCODE&lt;&gt;0 <span class="keyword">then</span></span><br><span class="line">			MessageBox(<span class="string">&quot;错误&quot;</span>,<span class="string">&quot;此课程未选！&quot;</span>)</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">if</span> ggrade&lt;&gt;<span class="string">&quot;&quot;</span> <span class="keyword">then</span></span><br><span class="line">				MessageBox(<span class="string">&quot;错误&quot;</span>,<span class="string">&quot;此课程已登分！&quot;</span>)</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				delete from sc <span class="built_in">where</span> sno=:s_info and cno=:c_info;</span><br><span class="line">				dw_4.reset()</span><br><span class="line">			   sle_1.text=<span class="string">&quot;&quot;</span></span><br><span class="line">			   dw_4.settransobject(sqlca)</span><br><span class="line">			   dw_4.retrieve(s_info)</span><br><span class="line">		   end <span class="keyword">if</span></span><br><span class="line">		end <span class="keyword">if</span></span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line">//pb_3的clicked()事件</span><br><span class="line">close(parent)</span><br><span class="line"></span><br><span class="line">//pb_4的clicked()事件</span><br><span class="line">open(w_select_student_score_report)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> <strong>w_student_score_report</strong><br>窗口设计如下：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/w_select_student_score_report.png" alt="w_student_score_report">  </p>
+<p>添加脚本  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//窗口w_student_score_report的open()事件脚本</span><br><span class="line">dw_1.settransobject(sqlca)</span><br><span class="line">dw_1.retrieve(s_info)</span><br><span class="line">dw_1.object.datawindow.readonly=<span class="string">&quot;yes&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> <strong>w_teacher_manage</strong><br> 窗口设计如下：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/w_teacher_manage.png" alt="w_teacher_manage">  </p>
+<p>添加脚本  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">//窗口w_teacher_manage的open()事件脚本</span><br><span class="line"><span class="built_in">declare</span> cnamecursor cursor <span class="keyword">for</span> select distinct c.cname from c,sc <span class="built_in">where</span> c.cno=sc.cno;</span><br><span class="line">open cnamecursor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> SQLCA.SQLCODE=-1 <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;sql error&quot;</span>,string(sqlca.sqldbcode)+<span class="string">&quot;:&quot;</span>+sqlca.sqlerrtext)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	cname_info=<span class="string">&quot;&quot;</span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		<span class="keyword">if</span> cname_info&lt;&gt;<span class="string">&quot;&quot;</span> <span class="keyword">then</span></span><br><span class="line">			ddlb_cname.additem(cname_info)</span><br><span class="line">		end <span class="keyword">if</span></span><br><span class="line">		fetch cnamecursor into :cname_info;</span><br><span class="line">	loop <span class="keyword">while</span> sqlca.sqlcode=0</span><br><span class="line">	<span class="keyword">if</span> SQLCA.SQLCODE=-1 <span class="keyword">then</span></span><br><span class="line">		messagebox(<span class="string">&quot;sql error&quot;</span>,string(sqlca.sqldbcode)+<span class="string">&quot;:&quot;</span>+sqlca.sqlerrtext)</span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line">close cnamecursor;</span><br><span class="line">pb_2.enabled=<span class="literal">false</span></span><br><span class="line">		</span><br><span class="line">//pb_1的clicked()事件脚本</span><br><span class="line"><span class="keyword">if</span> ddlb_cname.text=<span class="string">&quot;&quot;</span> <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;出错&quot;</span>,<span class="string">&quot;请选择课名！&quot;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	cname_info=upper(ddlb_cname.text)</span><br><span class="line">	select cno,tname into :c_info,:teacher from c <span class="built_in">where</span> cname=:cname_info;</span><br><span class="line">	st_5.text=ddlb_cname.text</span><br><span class="line">	st_6.text=teacher</span><br><span class="line">	dw_1.settransobject(sqlca);</span><br><span class="line">   dw_1.retrieve(c_info);</span><br><span class="line">	dw_1.object.datawindow.readonly=<span class="string">&quot;yes&quot;</span></span><br><span class="line">	pb_2.enabled=<span class="literal">true</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line">//pb_2的clicked()事件脚本</span><br><span class="line"><span class="keyword">if</span> pb_2.text=<span class="string">&quot;输入成绩&quot;</span> <span class="keyword">then</span></span><br><span class="line">	dw_1.object.datawindow.readonly=<span class="string">&quot;no&quot;</span></span><br><span class="line">	dw_1.setfocus()</span><br><span class="line">	//dw_1.setrow(2)//切换当前行为第2行</span><br><span class="line">   //dw_1.setcolumn(2)//焦点移动到第2个字段</span><br><span class="line">	pb_2.text=<span class="string">&quot;保存&quot;</span></span><br><span class="line">	pb_1.enabled=<span class="literal">false</span></span><br><span class="line">	pb_3.enabled=<span class="literal">false</span></span><br><span class="line">	pb_4.enabled=<span class="literal">false</span></span><br><span class="line">	st_4.text=<span class="string">&quot;请输入成绩：&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	dw_1.update()</span><br><span class="line">	dw_1.retrieve(c_info)</span><br><span class="line">	dw_1.object.datawindow.readonly=<span class="string">&quot;yes&quot;</span></span><br><span class="line">	pb_2.text=<span class="string">&quot;输入成绩&quot;</span></span><br><span class="line">	pb_1.enabled=<span class="literal">true</span></span><br><span class="line">	pb_3.enabled=<span class="literal">true</span></span><br><span class="line">	pb_4.enabled=<span class="literal">true</span></span><br><span class="line">	st_4.text=<span class="string">&quot;已选修此课程的学生：&quot;</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line">	</span><br><span class="line">//pb_3的clicked()事件脚本</span><br><span class="line">open(w_course_score_dis)</span><br><span class="line"></span><br><span class="line">//pb_4的clicked()事件脚本</span><br><span class="line">close(parent);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p> <strong>w_student_create</strong><br> 窗口设计如下：<br>  <img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/w_student_create.png" alt="w_student_create">  </p>
+<p>添加脚本  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line">//窗口w_student_create的open()事件脚本</span><br><span class="line">int sum,hascol</span><br><span class="line">dw_1.settransobject(sqlca);</span><br><span class="line">dw_1.retrieve();</span><br><span class="line">hascol=dw_1.retrieve();</span><br><span class="line">pb_2.enabled=<span class="literal">false</span></span><br><span class="line">st_1.text=string(hascol)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_1的clicked()事件脚本</span><br><span class="line">long l_row</span><br><span class="line">int s </span><br><span class="line">s=dw_1.RowCount()</span><br><span class="line">l_row=dw_1.InsertRow(s+1)</span><br><span class="line">dw_1.scrolltorow(s+1)</span><br><span class="line">dw_1.setfocus()</span><br><span class="line">pb_1.enabled=<span class="literal">false</span></span><br><span class="line">pb_2.enabled=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_2的clicked()事件脚本</span><br><span class="line">int s,hascol</span><br><span class="line">string kk</span><br><span class="line">s=dw_1.getrow();</span><br><span class="line">s_info=dw_1.getitemstring(s,<span class="string">&quot;sno&quot;</span>)</span><br><span class="line">select s.sno into :kk from s <span class="built_in">where</span> (s.sno=:s_info);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> s_info=kk <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;出错&quot;</span>,<span class="string">&quot;不能添加，此学号已存在！&quot;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	dw_1.update()</span><br><span class="line">	hascol=dw_1.retrieve()</span><br><span class="line">	st_1.text=string(hascol)</span><br><span class="line">	pb_1.enabled=<span class="literal">true</span></span><br><span class="line">	pb_2.enabled=<span class="literal">false</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_3的clicked()事件脚本</span><br><span class="line">int s,hascol</span><br><span class="line">string kk</span><br><span class="line">s=dw_1.getrow();</span><br><span class="line">s_info=dw_1.getitemstring(s,<span class="string">&quot;sno&quot;</span>)</span><br><span class="line"></span><br><span class="line">select sc.sno into :kk from sc <span class="built_in">where</span> (sc.sno=:s_info);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> s_info=kk <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;出错&quot;</span>,<span class="string">&quot;不能删除，此学生已选课！&quot;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	dw_1.DeleteRow(s);</span><br><span class="line">	dw_1.update();</span><br><span class="line">	hascol=dw_1.retrieve()</span><br><span class="line">	st_1.text=string(hascol)</span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line">pb_1.enabled=<span class="literal">true</span></span><br><span class="line">pb_2.enabled=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_4的clicked()事件脚本</span><br><span class="line">close(parent);</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line"> **w_course_create**  </span><br><span class="line"> 窗口设计如下：  </span><br><span class="line">  ![w_course_create](https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/w_course_create.png)  </span><br><span class="line"></span><br><span class="line">添加脚本  </span><br><span class="line">```bash</span><br><span class="line">//窗口w_course_create的open()事件脚本</span><br><span class="line">int sum,hascol</span><br><span class="line">dw_1.settransobject(sqlca);</span><br><span class="line">dw_1.retrieve();</span><br><span class="line">hascol=dw_1.retrieve();</span><br><span class="line">pb_2.enabled=<span class="literal">false</span></span><br><span class="line">st_1.text=string(hascol)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_1的clicked()事件脚本</span><br><span class="line">long l_row</span><br><span class="line">int s </span><br><span class="line">pb_1.enabled=<span class="literal">false</span></span><br><span class="line">s=dw_1.RowCount()</span><br><span class="line">l_row=dw_1.InsertRow(s+1)</span><br><span class="line">dw_1.scrolltorow(s+1)</span><br><span class="line">dw_1.setfocus()</span><br><span class="line">pb_1.enabled=<span class="literal">false</span></span><br><span class="line">pb_2.enabled=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_2的clicked()事件脚本</span><br><span class="line">int s,hascol</span><br><span class="line">string kk</span><br><span class="line">s=dw_1.getrow();</span><br><span class="line">c_info=dw_1.getitemstring(s,<span class="string">&quot;cno&quot;</span>)</span><br><span class="line">select c.cno into :kk from c <span class="built_in">where</span> (c.cno=:c_info);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> c_info=kk <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;出错&quot;</span>,<span class="string">&quot;不能添加，此课程号已存在！&quot;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	dw_1.update()</span><br><span class="line">	hascol=dw_1.retrieve()</span><br><span class="line">	st_1.text=string(hascol)</span><br><span class="line">	pb_1.enabled=<span class="literal">true</span></span><br><span class="line">	pb_2.enabled=<span class="literal">false</span></span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_3的clicked()事件脚本</span><br><span class="line">int s,hascol</span><br><span class="line">string kk</span><br><span class="line">s=dw_1.getrow();</span><br><span class="line">c_info=dw_1.getitemstring(s,<span class="string">&quot;cno&quot;</span>)</span><br><span class="line"></span><br><span class="line">select sc.cno into :kk from sc <span class="built_in">where</span> (sc.cno=:c_info);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> c_info=kk <span class="keyword">then</span></span><br><span class="line">	messagebox(<span class="string">&quot;出错&quot;</span>,<span class="string">&quot;不能删除，此课程已有学生选！&quot;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	dw_1.DeleteRow(s);</span><br><span class="line">	dw_1.update();</span><br><span class="line">	hascol=dw_1.retrieve()</span><br><span class="line">	st_1.text=string(hascol)</span><br><span class="line">end <span class="keyword">if</span></span><br><span class="line">pb_1.enabled=<span class="literal">true</span></span><br><span class="line">pb_2.enabled=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//pb_4的clicked()事件脚本</span><br><span class="line">close(parent);</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line"> **w_course_score_dis**  </span><br><span class="line"> 窗口设计如下：  </span><br><span class="line">  ![w_course_score_dis](https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/w_course_score_dis.png)  </span><br><span class="line"></span><br><span class="line">添加脚本  </span><br><span class="line">```bash</span><br><span class="line">//窗口w_course_score_dis的open()事件脚本</span><br><span class="line">dw_1.settransobject(sqlca)</span><br><span class="line">dw_1.retrieve()</span><br><span class="line">dw_1.object.datawindow.readonly=<span class="string">&quot;yes&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-添加菜单"><a href="#5-添加菜单" class="headerlink" title="5.添加菜单"></a>5.添加菜单</h4><p>设置窗口w_techer_manage菜单m_student<br>m_student的设计如下图：<br><img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/m_student.png" alt="m_student">  </p>
+<p>添加脚本  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//m_学生表的clicked()事件</span><br><span class="line">open(w_student_create)</span><br><span class="line"></span><br><span class="line">//m_课程表的clicked()事件</span><br><span class="line">open(w_course_create)</span><br><span class="line"></span><br><span class="line">//m_关闭的clicked()事件</span><br><span class="line">close(parentwindow)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>将菜单添加到w_teacher_manage窗口<br><img src="" alt="add_m_student">  </p>
+<h4 id="6-运行"><a href="#6-运行" class="headerlink" title="6.运行"></a>6.运行</h4><p>输入用户名为”system”,密码”system”登录进入教师界面，即打开w_teacher_manage窗口。<br><img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/run_system.png" alt="run_system">  </p>
+<p>输入用户名为学号如”s1”,密码为学号如”s1”登录进入s1学生的选课界面，即打开w_select_course窗口。<br><img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/run_student.png" alt="m_student">  </p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>该项目上传至<a href="">github</a>。</p>
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          打赏
+        </div>
+        
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/07/PB--%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/" data-id="cksn05faz0009ddnqa6oy17mv"
+        class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/" rel="tag">数据库原理</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/07/07/%E5%AD%A6%E7%94%9F%E9%80%89%E8%AF%BE%E7%B3%BB%E7%BB%9F/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            B/S--学生选课系统
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/04/16/JavaEE%E5%AE%9E%E9%AA%8C%E4%BA%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">JavaEE实验二</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'ii72g4FswY4weGoRf3f3Y7Od-gzGzoHsz',
+        app_key: 'tESihNbvbqmjF5kFmAV9QkaK',
+        path: window.location.pathname,
+        avatar: 'robohash',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2021
+        Aoxue
+      </li>
+      <li>
+        
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a> by shenyu
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <ul class="list-inline">
+  <li>PV:<span id="busuanzi_value_page_pv"></span></li>
+  <li>UV:<span id="busuanzi_value_site_uv"></span></li>
+</ul>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aoxue-blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+  <link rel="stylesheet" href="APlayer.min.css">
+<div id="aplayer"></div>
+<script src="APlayer.min.js"></script>
+
+</html>
