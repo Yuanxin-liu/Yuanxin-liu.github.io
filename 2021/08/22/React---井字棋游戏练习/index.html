@@ -89,13 +89,15 @@
 <p>Square组件负责维护每一个小正方形块的信息。<br>Board组件负责维护整个棋盘的信息。<br>Game组件负责维护棋盘的历史记录。</p>
 <p>子组件可以通过props属性获取到父组件传过来的值。<br>父组件如果想要控制子组件的交互则通过传递函数实现。例如Board组件想要点击Square组件时，Square组件显示’X’，可以这么做：</p>
 <ol>
-<li><p>将自己的state中value(也可以是其他名字）属性传给子组件。<br>Board组件中：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Square value=&#123;<span class="built_in">this</span>.props.value&#125;&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>将自己的handleChange函数通过onChange属性传给子组件。（一般监听函数用on开头命名，处理函数用handle开头命名）<br>Board组件中：</p>
+<li>将自己的state中value(也可以是其他名字）属性传给子组件。<br>Board组件中：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Square value=&#123;<span class="built_in">this</span>.props.value&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>将自己的handleChange函数通过onChange属性传给子组件。（一般监听函数用on开头命名，处理函数用handle开头命名）<br>Board组件中：</li>
+</ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">renderSquare</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Square</span> </span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">value</span>=<span class="string">&#123;this.props.squares[i]&#125;</span> </span></span></span><br><span class="line"><span class="tag"><span class="xml">    <span class="attr">onChange</span>=<span class="string">&#123;()</span>=&gt;</span>this.handleChange(i)&#125;&gt;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>Square函数组件中：</p>
-</li>
-</ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;props.onChange&#125;&gt;</span><br><span class="line">  &#123;props.value&#125;</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>在Board组件中处理handleChange函数。<br>Board组件：</li>
