@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="思考,代码,博客" />
+   
+  <meta name="description" content="record some ideas" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    React---props和state的区别 |  Aoxue-blog
+  </title>
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+</html>
+<body>
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-React---props和state的区别" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  React---props和state的区别
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/08/30/React---props%E5%92%8Cstate%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time datetime="2021-08-30T14:54:12.736Z" itemprop="datePublished">2021-08-30</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p>React组件中props和state属性会经常使用，弄清楚它们之间的区别以及什么时候使用props或者state十分有必要。</p>
+<span id="more"></span>
+
+<h1 id="1-props和state的区别"><a href="#1-props和state的区别" class="headerlink" title="1. props和state的区别"></a>1. props和state的区别</h1><p>props是父组件传给子组件的属性，只可读不可写。官方是这么说的：</p>
+<blockquote>
+<p>所有 React 组件都必须像纯函数一样保护它们的 props 不被更改。</p>
+</blockquote>
+<p>state属性是组件内的私有属性，用于维护组件内的数据。可以通过调用setState()方法改变state的值。setState()方法调用完之后会调用组件内的render()函数，因此注意不要将setState()方法写在render()函数内，会造成死循环。</p>
+<h1 id="2-什么时候使用props？什么时候使用state？"><a href="#2-什么时候使用props？什么时候使用state？" class="headerlink" title="2. 什么时候使用props？什么时候使用state？"></a>2. 什么时候使用props？什么时候使用state？</h1><p>这个问题其实可以转换为一个问题—-什么时候使用state？<br>当我们已经了解到了所有组件之间的逻辑之后，在考虑数据是否放在state里时，可以思考：</p>
+<blockquote>
+<p>1.该数据是否是由父组件通过 props 传递而来的？如果是，那它应该不是 state。<br>2.该数据是否随时间的推移而保持不变？如果是，那它应该也不是 state。<br>3.你能否根据其他 state 或 props 计算出该数据的值？如果是，那它也不是 state。</p>
+</blockquote>
+<h1 id="代码练习"><a href="#代码练习" class="headerlink" title="代码练习"></a>代码练习</h1><p>封装一个简单的Clock组件。<br>思路：<br>由于Clock是会被复用的，所以时间值放在state中，不一样的地方可以放在props中（如每个时钟的名字）。<br>代码如下：</p>
+<h3 id="1-创建react-app"><a href="#1-创建react-app" class="headerlink" title="1. 创建react-app"></a>1. 创建react-app</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app test</span><br></pre></td></tr></table></figure>
+<h3 id="2-将src文件下的文件删除"><a href="#2-将src文件下的文件删除" class="headerlink" title="2. 将src文件下的文件删除"></a>2. 将src文件下的文件删除</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd src &amp;&amp; rm -f *</span><br></pre></td></tr></table></figure>
+<h3 id="3-在src下添加index-js文件，内容如下（建议看懂逻辑之后自己重新写）"><a href="#3-在src下添加index-js文件，内容如下（建议看懂逻辑之后自己重新写）" class="headerlink" title="3. 在src下添加index.js文件，内容如下（建议看懂逻辑之后自己重新写）"></a>3. 在src下添加index.js文件，内容如下（建议看懂逻辑之后自己重新写）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&#x27;react-dom&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;construct Clock&#x27;</span>);</span><br><span class="line">        <span class="built_in">super</span>(props);</span><br><span class="line">        <span class="built_in">this</span>.state = &#123;</span><br><span class="line">            <span class="attr">time</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString(),</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">componentDidMount</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;didMount&#x27;</span>);</span><br><span class="line">        <span class="built_in">this</span>.timer = <span class="built_in">setInterval</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">                <span class="attr">time</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString(),</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,<span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">componentWillUnmount</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">clearInterval</span>(<span class="built_in">this</span>.timer);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;Clock renser&#x27;</span>);</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="xml">                    &#123;this.props.name&#125;</span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="xml">                    &#123;this.state.time&#125;</span></span><br><span class="line"><span class="xml">                <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Box</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;box&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Clock</span> <span class="attr">name</span>=<span class="string">&quot;时钟1&quot;</span>/&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">Box</span>/&gt;</span></span>,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="4-运行结果如下："><a href="#4-运行结果如下：" class="headerlink" title="4. 运行结果如下："></a>4. 运行结果如下：</h3><p><img src="https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/img/react/WechatIMG55.png" alt="运行结果"></p>
+<blockquote>
+<p>根据打印的日志可以知道组件是从上至下执行的，执行到Clock组件之后。先执行constructor()函数，然后执行render()函数，然后执行componentDidMount()函数，在componentDidMount()函数中，setState()函数每隔一秒被调用，因此render()也跟着被一直调用。</p>
+</blockquote>
+
+      
+      <!-- 打赏 -->
+      
+        <div id="reward-btn">
+          打赏
+        </div>
+        
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/08/30/React---props%E5%92%8Cstate%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cksyrqdp10000rrdv89alc6oh"
+        class="article-share-link">分享</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/08/22/React---%E4%BA%95%E5%AD%97%E6%A3%8B%E6%B8%B8%E6%88%8F%E7%BB%83%E4%B9%A0/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">React---井字棋游戏练习</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: 'ii72g4FswY4weGoRf3f3Y7Od-gzGzoHsz',
+        app_key: 'tESihNbvbqmjF5kFmAV9QkaK',
+        path: window.location.pathname,
+        avatar: 'robohash',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2021
+        Aoxue
+      </li>
+      <li>
+        
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a> by shenyu
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <ul class="list-inline">
+  <li>PV:<span id="busuanzi_value_page_pv"></span></li>
+  <li>UV:<span id="busuanzi_value_site_uv"></span></li>
+</ul>
+        
+      </li>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+    <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      
+        <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Aoxue-blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">目录</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+      </aside>
+      <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+      
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+  
+  
+  </div>
+</body>
+  <link rel="stylesheet" href="APlayer.min.css">
+<div id="aplayer"></div>
+<script src="APlayer.min.js"></script>
+
+</html>
