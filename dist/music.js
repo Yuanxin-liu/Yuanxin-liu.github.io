@@ -61,6 +61,40 @@ const ap = new APlayer({
     order: 'random',
     volume: 0.7,
     audio: [
+      // {
+      //   name: "",
+      //   artist: '',
+      //   url: '',
+      //   cover: '',
+      // },
+      {
+        name: "两难",
+        artist: '加木',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E4%B8%A4%E9%9A%BE.mp3',
+        cover: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E4%B8%A4%E9%9A%BE.jpg',
+      },
+      {
+        name: "沉溺",
+        artist: 'Pank',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E6%B2%89%E6%BA%BA.mp3',
+        cover: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/%E6%B2%89%E6%BA%BA.jpg',
+      },
+      {
+        name: "忘不掉的你",
+        artist: 'h3R3',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/obj_wo3DlMOGwrbDjj7DisKw_14096412060_add8_8868_addf_16aaffa8e47bfbe1fd4ce87e26c8cd52.mp3',
+        cover: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/65d1ea990093a2824dd3bf55298f8d46.jpeg',
+
+
+      },
+      {
+        name: "还是会想你",
+        artist: '林达浪',
+        url: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/obj_wo3DlMOGwrbDjj7DisKw_14096417167_048c_4cb1_7dd0_a6e99101597f8b95b23244d4c7ec35c7.mp3',
+        cover: 'https://media-yuanxin.oss-cn-hangzhou.aliyuncs.com/music/8da27d06ca7943c6e10b52e3ca1ca474.jpg',
+
+        
+      },
       {
         name: "I don't wanna see u anymore",
         artist: 'NINEONE',
